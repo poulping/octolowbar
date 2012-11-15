@@ -17,7 +17,9 @@ class timelineActions extends sfActions
      */
     public function executeIndex(sfWebRequest $request)
     {
-        //$this->forward('default', 'module');
+        $this->contents  = ContentTable::getInstance()->getAllChronological();
+        $keys = $this->contents->getPrimaryKeys();
+        $this->getUser()->setKeysSent($keys);
     }
 
     public function executeAdd(sfWebRequest $request)
@@ -27,6 +29,8 @@ class timelineActions extends sfActions
 
     public function executeShow(sfWebRequest $request)
     {
-        //$this->forward('default', 'module');
+        $id = $request->getParameter('id');
+        $this->forward404Unless($id);
+        $this->content = ContentTable::getInstance()->getWithComments($id);
     }
 }
