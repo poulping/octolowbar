@@ -1,0 +1,68 @@
+//Global transition settings
+%globaltransition{
+    @include transition-duration(0.2s);
+    @include transition-timing-function(linear);
+}
+
+//Transition text color on anchor links
+a{
+    @extend %globaltransition;
+    @include transition-property(color);
+}
+
+//Transition background color on button module
+.m-button, .b-grey-with-arrow, ul.event-videos a.inner{
+    @extend %globaltransition;
+    @include transition-property(background-color);
+}
+
+.b-previous span, .b-grey-with-arrow span{
+    @extend %globaltransition;
+    @include transition-property(border-color, left, right);
+}
+
+.b-close{
+    @extend %globaltransition;
+    @include transition-property(box-shadow, color);
+}
+
+.b-facebook-page{
+    @extend %globaltransition;
+    @include transition-property(opacity);
+}
+
+//Animation on hover for the fact box in the header with a fallback to a normal show/hide
+.m-fact{
+    .csstransitions &{
+        .box{
+            top:25px;
+            opacity:0;
+            @include transition-duration(0.25s);
+            @include transition-timing-function(ease-in-out);
+            @include transition-property(opacity, top);
+        }
+        &:hover{
+            .box{opacity:1;}
+        }
+    }
+    .no-csstransitions &{
+        .box{display:none;}
+        &:hover{
+            .box{display:block;}
+        }
+    }
+}
+
+//Fading animation for the modal box
+.fade{
+    opacity: 0;
+    @extend %globaltransition;
+    @include transition-property(opacity);
+    &.in{opacity: 1;} 
+}
+
+.carousel-control, .m-calendar .ui-datepicker-next,  .m-calendar .ui-datepicker-prev{
+    @extend %globaltransition;
+    @include transition-property(opacity, border-color);
+}
+

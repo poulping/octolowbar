@@ -1,0 +1,93 @@
+/* =======================================================================
+Font-face
+========================================================================== */
+@font-face {
+    font-family: 'drukpaBold';
+    src: url('fonts/drukpabold-webfont.eot'); /* IE9 Compat Modes */
+    src: url('fonts/drukpabold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/drukpabold-webfont.woff') format('woff'), /* Modern Browsers */
+         url('fonts/drukpabold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('fonts/drukpabold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* =======================================================================
+Variables
+========================================================================== */
+
+//Colors
+
+$white:                             #fff;
+$almostblack:                       #191919;
+
+$lightgrey:                         #f3f3f3;
+$grey:                              #b9b9b9;
+$darkgrey:                          #b2b2b2;
+$reallydarkgrey:                    #464646;
+
+$lightblue:                         #81d4e7;
+$darkblue:                          #3d9dba;
+
+$lightbrown:                        #984708;
+$darkbrown:                         #611901;
+
+//Gradients
+$greygradientop:                    #d0cece;
+$greygradienbot:                    #B0AFAF;
+
+//This second grey is for the get the fact page
+$greygradientop-2:                  #d6d6d6;
+$greygradienbot-2:                  #eeeeee;
+
+$bluegradientop:                    #67c2db;
+$bluegradienbot:                    $darkblue;
+
+$browngradientop:                   $lightbrown;
+$browngradienbot:                   $darkbrown;
+
+//Layout colors
+$backgroundcolor:                   #e2e2e2;
+$footerbackgroundcolor:             #191919;
+$footertextcolor:                   darken($white, 50%);
+$basefontcolor:                     $reallydarkgrey;
+
+/* Fonts stacks */
+$fontstacktitle:                    "drukpaBold", Arial, Helvetica, sans-serif;
+$fontstackparagraph:                "Helvetica Neue", Arial, Helvetica, sans-serif;
+
+/* Layout */
+$containerpadding:                  38px;
+$containersize:                     1010px - ($containerpadding * 2);
+$fixedsidebarwidth:                 285px;
+$fixedcontentwidth:                 630px;
+
+
+
+/* =======================================================================
+Mixins
+========================================================================== */
+
+
+/* =======================================================================
+Placeholder
+========================================================================== */
+%tiledgreybackground{
+    background: url('../images/bg-tile_grey.png') repeat;
+}
+
+%tiledbluebackground{
+    background: url('../images/bg-tile_blue.png') repeat;
+}
+
+%tiledborders{
+    @extend %tiledgreybackground;
+    .content-holder{
+        margin:10px;
+        padding:1px;
+        background:#fff;
+    }
+}
+
+%layoutsprite{background:url('../images/s-layout-elems.png') 0 0 no-repeat;}

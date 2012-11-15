@@ -1,0 +1,67 @@
+::-moz-selection {
+    background: $darkblue;
+    text-shadow: none;
+    color:$white;
+}
+
+::selection {
+    background: $darkblue;
+    text-shadow: none;
+    color:$white;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font: {
+        family: $fontstackparagraph;
+        size:12px;
+    }
+    color: $basefontcolor;
+
+}
+
+body{
+    background:$backgroundcolor;
+}
+
+
+h1, h2, h3, h4, h5, h6{margin-top:0;}
+
+h1{}
+h2{}
+h3{
+    margin-bottom: 18px;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color:$darkblue;
+}
+h4{
+    margin-bottom:18px;
+}
+
+nav ul, nav ol {
+    margin:0;
+    padding:0;
+}
+ul, ol{
+    margin:0 0 12px 0;
+}
+
+p{margin-top:0;}
+
+
+%link-big{
+    @extend h3;
+    margin:0;
+    font-weight: bold;
+}
+a {
+    @include link-colors($darkblue, $reallydarkgrey, $darkblue, $darkblue);
+    &.link-dark{
+        @include link-colors($reallydarkgrey, $reallydarkgrey, $reallydarkgrey, $reallydarkgrey);
+    }
+}

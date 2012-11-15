@@ -1,0 +1,14 @@
+
+
+
+
+#container{
+    width:$containersize;
+    margin:0 auto;
+    background:red;
+    >.wrapper{
+        margin:0 $wrapperpadding;
+        padding:$wrapperpadding;
+        background:$white;
+    }
+}

@@ -10,12 +10,16 @@
     <link rel="shortcut icon" href="/favicon.ico" />
     <?php include_stylesheets() ?>
     <?php echo javascript_include_tag('vendor/modernizr-2.6.2.min.js') ?>
-  </head>
-  <body>
-    <?php echo $sf_content ?>
+    </head>
+    <body>
 
+        <div id="container">
+            <div class="wrapper">
+                <?php echo $sf_content ?>
+            </div>
+        </div>
 
-    <?php include_javascripts() ?>
+        <?php include_javascripts() ?>
 
-  </body>
+    </body>
 </html>
