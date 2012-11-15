@@ -4,7 +4,16 @@
 # default rules
 homepage:
   url:   /
-  param: { module: default, action: index }
+  param: { module: timeline, action: index }
+
+show_content:
+  url:   /timeline/show/:id
+  param: { module: timeline, action: show }
+
+
+add_content:
+  url:   /timeline/add
+  param: { module: timeline, action: add }
 
 # generic rules
 # please, remove them by adding more specific rules

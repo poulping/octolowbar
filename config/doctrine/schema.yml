@@ -1,0 +1,52 @@
+options:
+  collate: utf8_unicode_ci
+  charset: utf8
+  detect_relations: false
+
+
+Content:
+  actAs:
+    Timestampable: ~
+  columns:
+    title:          {  type: string(255), notnull: true     }
+    type:           { type: string(10),   notnull: true     }
+    date_published: { type: datetime,     notnull: true     }
+
+ContentVideo:
+  inheritance:
+    type:          column_aggregation
+    extends:       Content
+    keyField:      type
+    keyValue:      video
+  columns:
+    video_url: { type: string(255), notnull: true }
+    content_additional:   { type: string(4000), notnull: true }
+
+ContentAudio:
+  inheritance:
+    type:          column_aggregation
+    extends:       Content
+    keyField:      type
+    keyValue:      audio
+  columns:
+    video_url: { type: string(255), notnull: true }
+    content_additional:   { type: string(4000), notnull: true }
+
+ContentText:
+  inheritance:
+    type:          column_aggregation
+    extends:       Content
+    keyField:      type
+    keyValue:      text
+  columns:
+    content:   { type: string(4000), notnull: true }
+
+Comment:
+  actAs:
+    Timestampable: ~
+  columns:
+    content_id: { type: integer }
+    username:   { type: string(255), notnull: true }
+    content:    { type: string(4000), notnull: true }
+  relations:
+      Content: { onDelete: CASCADE, local: content_id, foreign: id, foreignAlias: Comments }
