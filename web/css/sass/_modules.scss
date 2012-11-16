@@ -6,6 +6,22 @@
 
 .m-row{
     list-style:none;
-    border-bottom:1px solid red;
-    padding:12px 0;
+    border-bottom:1px solid #6fcee4;
+    padding:36px 0;
+}
+
+.m-item{
+    color:black;
+    text-decoration:none;
+    .text{
+        margin:12px 0;
+        font-style: italic;
+    }
+    .name{
+        font-style: italic;
+        text-align: right;
+    }
+    .l-video{}
+    .l-photo{}
+    .l-text{}
 }

@@ -883,10 +883,11 @@ p {
 /* line 5, sass/_layout.scss */
 #container {
   width: 100%;
+  min-width: 720px;
   margin: 0 auto;
-  background: red;
+  background: #6fcee4;
 }
-/* line 9, sass/_layout.scss */
+/* line 10, sass/_layout.scss */
 #container > .wrapper {
   margin: 0 40px;
   padding: 40px;
@@ -902,6 +903,22 @@ p {
 /* line 7, sass/_modules.scss */
 .m-row {
   list-style: none;
-  border-bottom: 1px solid red;
-  padding: 12px 0;
+  border-bottom: 1px solid #6fcee4;
+  padding: 36px 0;
+}
+
+/* line 13, sass/_modules.scss */
+.m-item {
+  color: black;
+  text-decoration: none;
+}
+/* line 16, sass/_modules.scss */
+.m-item .text {
+  margin: 12px 0;
+  font-style: italic;
+}
+/* line 20, sass/_modules.scss */
+.m-item .name {
+  font-style: italic;
+  text-align: right;
 }
