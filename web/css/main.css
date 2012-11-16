@@ -919,6 +919,6 @@ p {
 }
 /* line 20, sass/_modules.scss */
 .m-item .name {
+  margin: 12px 0;
   font-style: italic;
-  text-align: right;
 }
