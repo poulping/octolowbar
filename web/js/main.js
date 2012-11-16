@@ -7,6 +7,6 @@ $(function() {
 
 EIGHT = {
     init : function(){
-        alert("low");
+       //alert("low");
     }
 }
