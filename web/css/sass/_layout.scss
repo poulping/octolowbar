@@ -1,0 +1,15 @@
+
+
+
+
+#container{
+    width:$containersize;
+    min-width: $containermin;
+    margin:0 auto;
+    background:#6fcee4;
+    >.wrapper{
+        margin:0 $wrapperpadding;
+        padding:$wrapperpadding;
+        background:$white;
+    }
+}

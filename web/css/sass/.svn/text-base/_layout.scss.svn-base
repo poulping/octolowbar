@@ -1,0 +1,70 @@
+/* =======================================================================
+Container
+========================================================================== */
+#container {
+    @extend .clearfix;
+}
+
+
+/* =======================================================================
+Content
+========================================================================== */
+#content {
+    @extend .clearfix;
+    .l-fixed.l-one-columns &{
+        padding:40px 0 60px;
+        margin:0 -10px 0;
+    }
+    .l-fixed.l-two-columns &{
+        float:right;
+        width:$fixedcontentwidth;
+    }
+}
+
+
+/* =======================================================================
+Sidebar
+========================================================================== */
+#sidebar {
+    float:left;
+    margin-bottom:120px;
+    .l-fixed.l-two-columns &{
+        width:$fixedsidebarwidth;
+    }
+}
+
+
+/* =======================================================================
+Content wrapper
+========================================================================== */
+.l-wrapped{
+    padding:0 $containerpadding;
+    width:$containersize;
+    margin:0 auto;
+}
+
+
+/* =======================================================================
+Blue Band
+========================================================================== */
+.l-has-blue-band{
+    .m-blue_band{
+        position:absolute;
+        z-index:999;
+        top:365px;
+        left:0;
+        width:100%;
+    }
+    .m-fb_box{
+        position:relative;
+        z-index: 1000;
+    }
+    #content > .content-holder{
+        position:relative;
+        padding-top:112px;
+        .back{
+            position:absolute;
+            top:8px;
+        }
+    }
+}

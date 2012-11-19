@@ -1,0 +1,40 @@
+
+body{
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font: {
+        family: $fontstackparagraph;
+        size:12px;
+    }
+    color: $basefontcolor;
+
+}
+
+body{
+    background:$backgroundcolor;
+}
+
+
+h1, h2, h3, h4, h5, h6{margin-top:0;}
+
+h1{}
+h2{}
+h3{}
+h4{}
+
+nav ul, nav ol {
+    margin:0;
+    padding:0;
+}
+ul, ol{
+    margin:0 0 12px 0;
+}
+
+p{margin-top:0;}
+
+a {}
