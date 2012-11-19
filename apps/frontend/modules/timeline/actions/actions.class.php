@@ -17,14 +17,41 @@ class timelineActions extends sfActions
      */
     public function executeIndex(sfWebRequest $request)
     {
-        $this->contents  = ContentTable::getInstance()->getAllChronological();
-        $keys = $this->contents->getPrimaryKeys();
+        $this->contents = ContentTable::getInstance()->getAllChronological();
+        $keys           = $this->contents->getPrimaryKeys();
         $this->getUser()->setKeysSent($keys);
     }
 
     public function executeAdd(sfWebRequest $request)
     {
+        $content_type = $request->getParameter('content_type', false);
+        if ($content_type && is_callable(array($this, 'executeAdd' . sfInflector::camelize($content_type), false, $callable)))
+        {
+            $this->forward('timeline', $callable);
+        }
+
+        $this->form = false;
         //$this->forward('default', 'module');
+    }
+
+    public function executeAddVideo(sfWebRequest $request)
+    {
+        $this->form = new ContentVideoForm();
+    }
+
+    public function executeAddAudio(sfWebRequest $request)
+    {
+        $this->form = new ContentAudioForm();
+    }
+
+    public function executeAddText(sfWebRequest $request)
+    {
+        $this->form = new ContentTextForm();
+    }
+
+    public function executeProcessForm(sfWebRequest $request)
+    {
+
     }
 
     public function executeShow(sfWebRequest $request)

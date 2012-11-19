@@ -10,11 +10,15 @@
  */
 class ContentAudioForm extends BaseContentAudioForm
 {
-  /**
-   * @see ContentForm
-   */
-  public function configure()
-  {
-    parent::configure();
-  }
+    /**
+     * @see ContentForm
+     */
+    public function configure()
+    {
+        parent::configure();
+
+        $this->useFields(array('title', 'date_published', 'video_url', 'content_additional'));
+
+        $this->setValidator('video_url', new sfValidatorUrl());
+    }
 }

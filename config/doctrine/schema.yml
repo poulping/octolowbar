@@ -5,6 +5,10 @@ options:
 
 
 Content:
+    type:          column_aggregation
+    extends:       Content
+    keyField:      type
+    keyValue:      video
   actAs:
     Timestampable: ~
   columns:
@@ -14,10 +18,6 @@ Content:
 
 ContentVideo:
   inheritance:
-    type:          column_aggregation
-    extends:       Content
-    keyField:      type
-    keyValue:      video
   columns:
     video_url: { type: string(255), notnull: true }
     content_additional:   { type: string(4000), notnull: true }

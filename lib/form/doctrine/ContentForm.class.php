@@ -12,5 +12,13 @@ class ContentForm extends BaseContentForm
 {
   public function configure()
   {
+      $this->setWidget('title', new sfWidgetFormInputText());
+
+      $this->setValidator('title', new sfValidatorString());
+
+      $this->setWidget('date_published', new sfWidgetFormDate());
+
+      $this->setValidator('date_published', new sfValidatorDate());
+
   }
 }

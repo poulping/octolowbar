@@ -10,11 +10,15 @@
  */
 class ContentTextForm extends BaseContentTextForm
 {
-  /**
-   * @see ContentForm
-   */
-  public function configure()
-  {
-    parent::configure();
-  }
+    /**
+     * @see ContentForm
+     */
+    public function configure()
+    {
+        parent::configure();
+
+        $this->useFields(array('title', 'date_published', 'content'));
+
+        $this->setValidator('content', new sfValidatorString());
+    }
 }

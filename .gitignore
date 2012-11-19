@@ -34,3 +34,5 @@ Thumbs.db
 .idea
 cache/*
 log/*
+
+config/databases.yml

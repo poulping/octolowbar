@@ -12,5 +12,6 @@ class CommentForm extends BaseCommentForm
 {
   public function configure()
   {
+
   }
 }
