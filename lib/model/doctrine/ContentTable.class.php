@@ -7,6 +7,15 @@
  */
 class ContentTable extends Doctrine_Table
 {
+
+    const CONTENT_AUDIO = 'audio';
+
+    const CONTENT_VIDEO = 'video';
+
+    const CONTENT_TEXT = 'text';
+
+    public static $types = array(self::CONTENT_AUDIO, self::CONTENT_TEXT, self::CONTENT_VIDEO);
+
     /**
      * Returns an instance of this class.
      *

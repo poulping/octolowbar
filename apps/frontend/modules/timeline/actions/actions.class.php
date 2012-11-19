@@ -25,28 +25,36 @@ class timelineActions extends sfActions
     public function executeAdd(sfWebRequest $request)
     {
         $content_type = $request->getParameter('content_type', false);
-        if ($content_type && is_callable(array($this, 'executeAdd' . sfInflector::camelize($content_type), false, $callable)))
+        $callable = 'Add' . sfInflector::camelize($content_type);
+        $is_callable = method_exists($this, 'execute' . $callable);
+        if ($content_type && $is_callable)
         {
             $this->forward('timeline', $callable);
         }
 
         $this->form = false;
-        //$this->forward('default', 'module');
+
     }
 
     public function executeAddVideo(sfWebRequest $request)
     {
         $this->form = new ContentVideoForm();
+
+        $this->setTemplate('add');
     }
 
     public function executeAddAudio(sfWebRequest $request)
     {
         $this->form = new ContentAudioForm();
+
+        $this->setTemplate('add');
     }
 
     public function executeAddText(sfWebRequest $request)
     {
         $this->form = new ContentTextForm();
+
+        $this->setTemplate('add');
     }
 
     public function executeProcessForm(sfWebRequest $request)
