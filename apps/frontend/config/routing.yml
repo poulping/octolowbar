@@ -18,7 +18,21 @@ add_content:
   url:   /timeline/add
   param: { module: timeline, action: add }
 
+add_content_video:
+  url:   /timeline/add/video
+  param: { module: timeline, action: addVideo }
 
+add_content_audio:
+  url:   /timeline/add/audio
+  param: { module: timeline, action: addAudio }
+
+add_content_image:
+  url:   /timeline/add/image
+  param: { module: timeline, action: addImage }
+
+add_content_text:
+  url:   /timeline/add/text
+  param: { module: timeline, action: addText }
 
 # generic rules
 # please, remove them by adding more specific rules

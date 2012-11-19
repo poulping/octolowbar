@@ -12,4 +12,8 @@
  */
 class ContentText extends BaseContentText
 {
+    public function getType()
+    {
+        return ContentTable::CONTENT_TEXT;
+    }
 }

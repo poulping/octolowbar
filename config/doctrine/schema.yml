@@ -5,10 +5,6 @@ options:
 
 
 Content:
-    type:          column_aggregation
-    extends:       Content
-    keyField:      type
-    keyValue:      video
   actAs:
     Timestampable: ~
   columns:
@@ -18,9 +14,14 @@ Content:
 
 ContentVideo:
   inheritance:
+    type:          column_aggregation
+    extends:       Content
+    keyField:      type
+    keyValue:      video
   columns:
     video_url: { type: string(255), notnull: true }
-    content_additional:   { type: string(4000), notnull: true }
+    video_thumb: { type: string(255), notnull: true }
+    content_additional:   { type: string(4000) }
 
 ContentAudio:
   inheritance:
@@ -30,7 +31,7 @@ ContentAudio:
     keyValue:      audio
   columns:
     video_url: { type: string(255), notnull: true }
-    content_additional:   { type: string(4000), notnull: true }
+    content_additional:   { type: string(4000) }
 
 ContentText:
   inheritance:
@@ -40,6 +41,16 @@ ContentText:
     keyValue:      text
   columns:
     content:   { type: string(4000), notnull: true }
+
+ContentImage:
+  inheritance:
+    type:          column_aggregation
+    extends:       Content
+    keyField:      type
+    keyValue:      image
+  columns:
+    content_additional:   { type: string(4000) }
+    image:   { type: string(255), notnull: true }
 
 Comment:
   actAs:

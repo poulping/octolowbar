@@ -3,6 +3,16 @@
     <li><?php echo link_to($type, '@add_content_type?content_type='.$type, array()) ; ?></li>
 <?php endforeach; ?>
 </ul>
+<?php if ($sf_user->hasFlash('content_add.success')) : ?>
+<h2><?php echo $sf_user->getFlash('content_add.success')?></h2>
+<?php endif; ?>
+<?php if ($form) : ?>
+<?php echo form_tag('@add_content_'.$form->getObject()->getType(), array('multipart' => $form->isMultipart())) ?>
 <table>
-    <tr><?php echo $form ?></tr>
+    <?php echo $form ?>
+    <tr>
+        <td coslpan="2"><input type="submit" value="Send" /></td>
+    </tr>
 </table>
+</form>
+<?php endif; ?>

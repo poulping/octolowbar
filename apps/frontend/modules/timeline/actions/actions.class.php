@@ -27,6 +27,9 @@ class timelineActions extends sfActions
         $content_type = $request->getParameter('content_type', false);
         $callable = 'Add' . sfInflector::camelize($content_type);
         $is_callable = method_exists($this, 'execute' . $callable);
+
+
+
         if ($content_type && $is_callable)
         {
             $this->forward('timeline', $callable);
@@ -39,6 +42,14 @@ class timelineActions extends sfActions
     public function executeAddVideo(sfWebRequest $request)
     {
         $this->form = new ContentVideoForm();
+        if ($request->isMethod('post'))
+        {
+
+            if ($this->processForm($this->form, $request))
+            {
+                $this->redirect('add_content');
+            }
+        }
 
         $this->setTemplate('add');
     }
@@ -47,6 +58,14 @@ class timelineActions extends sfActions
     {
         $this->form = new ContentAudioForm();
 
+        if ($request->isMethod('post'))
+        {
+            if ($this->processForm($this->form, $request))
+            {
+                $this->redirect('content_add');
+            }
+        }
+
         $this->setTemplate('add');
     }
 
@@ -54,12 +73,38 @@ class timelineActions extends sfActions
     {
         $this->form = new ContentTextForm();
 
+        if ($request->isMethod('post'))
+        {
+            $this->processForm($this->form, $request);
+        }
+
         $this->setTemplate('add');
     }
 
-    public function executeProcessForm(sfWebRequest $request)
+    public function executeAddImage(sfWebRequest $request)
     {
+        $this->form = new ContentImageForm();
 
+        if ($request->isMethod('post'))
+        {
+            $this->processForm($this->form, $request);
+        }
+
+        $this->setTemplate('add');
+    }
+
+    protected function ProcessForm($form, $request)
+    {
+        $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
+
+        if ($form->isValid())
+        {
+            $this->getUser()->setFlash('content_add.success', 'Your content has been succesfully added');
+            $form->save();
+
+            return true;
+        }
+        return false;
     }
 
     public function executeShow(sfWebRequest $request)

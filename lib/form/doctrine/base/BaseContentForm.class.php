@@ -20,8 +20,10 @@ abstract class BaseContentForm extends BaseFormDoctrine
       'type'               => new sfWidgetFormInputText(),
       'date_published'     => new sfWidgetFormInputText(),
       'video_url'          => new sfWidgetFormInputText(),
+      'video_thumb'        => new sfWidgetFormInputText(),
       'content_additional' => new sfWidgetFormTextarea(),
       'content'            => new sfWidgetFormTextarea(),
+      'image'              => new sfWidgetFormInputText(),
       'created_at'         => new sfWidgetFormDateTime(),
       'updated_at'         => new sfWidgetFormDateTime(),
     ));
@@ -32,8 +34,10 @@ abstract class BaseContentForm extends BaseFormDoctrine
       'type'               => new sfValidatorString(array('max_length' => 10)),
       'date_published'     => new sfValidatorPass(),
       'video_url'          => new sfValidatorString(array('max_length' => 255)),
-      'content_additional' => new sfValidatorString(array('max_length' => 4000)),
+      'video_thumb'        => new sfValidatorString(array('max_length' => 255)),
+      'content_additional' => new sfValidatorString(array('max_length' => 4000, 'required' => false)),
       'content'            => new sfValidatorString(array('max_length' => 4000)),
+      'image'              => new sfValidatorString(array('max_length' => 255)),
       'created_at'         => new sfValidatorDateTime(),
       'updated_at'         => new sfValidatorDateTime(),
     ));

@@ -9,23 +9,29 @@
  * @property string $type
  * @property datetime $date_published
  * @property string $video_url
+ * @property string $video_thumb
  * @property string $content_additional
  * @property string $content
+ * @property string $image
  * @property Doctrine_Collection $Comments
  * 
  * @method string              getTitle()              Returns the current record's "title" value
  * @method string              getType()               Returns the current record's "type" value
  * @method datetime            getDatePublished()      Returns the current record's "date_published" value
  * @method string              getVideoUrl()           Returns the current record's "video_url" value
+ * @method string              getVideoThumb()         Returns the current record's "video_thumb" value
  * @method string              getContentAdditional()  Returns the current record's "content_additional" value
  * @method string              getContent()            Returns the current record's "content" value
+ * @method string              getImage()              Returns the current record's "image" value
  * @method Doctrine_Collection getComments()           Returns the current record's "Comments" collection
  * @method Content             setTitle()              Sets the current record's "title" value
  * @method Content             setType()               Sets the current record's "type" value
  * @method Content             setDatePublished()      Sets the current record's "date_published" value
  * @method Content             setVideoUrl()           Sets the current record's "video_url" value
+ * @method Content             setVideoThumb()         Sets the current record's "video_thumb" value
  * @method Content             setContentAdditional()  Sets the current record's "content_additional" value
  * @method Content             setContent()            Sets the current record's "content" value
+ * @method Content             setImage()              Sets the current record's "image" value
  * @method Content             setComments()           Sets the current record's "Comments" collection
  * 
  * @package    octolowbar
@@ -57,15 +63,24 @@ abstract class BaseContent extends sfDoctrineRecord
              'notnull' => true,
              'length' => 255,
              ));
-        $this->hasColumn('content_additional', 'string', 4000, array(
+        $this->hasColumn('video_thumb', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
+             'length' => 255,
+             ));
+        $this->hasColumn('content_additional', 'string', 4000, array(
+             'type' => 'string',
              'length' => 4000,
              ));
         $this->hasColumn('content', 'string', 4000, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 4000,
+             ));
+        $this->hasColumn('image', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 255,
              ));
 
         $this->option('collate', 'utf8_unicode_ci');
@@ -84,6 +99,10 @@ abstract class BaseContent extends sfDoctrineRecord
              'ContentText' => 
              array(
               'type' => 'text',
+             ),
+             'ContentImage' => 
+             array(
+              'type' => 'image',
              ),
              ));
     }
