@@ -25,7 +25,7 @@ class ContentVideoForm extends BaseContentVideoForm
 
       $this->setValidator('video_thumb', new sfValidatorFile(array(
           'mime_types'      => 'web_images',
-          'path'            => sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'barlow',
+          'path'            => sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'lowbar',
           'required'        => false
 
       )));

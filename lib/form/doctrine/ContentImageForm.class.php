@@ -16,5 +16,14 @@ class ContentImageForm extends BaseContentImageForm
   public function configure()
   {
     parent::configure();
+
+      $this->useFields(array('title', 'date_published', 'image', 'content_additional'));
+
+      $this->setWidget('image', new sfWidgetFormInputFile());
+
+      $this->setValidator('image', new sfValidatorFile(array(
+          'mime_types'      => 'web_images',
+          'path'            => sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'lowbar',))
+      );
   }
 }

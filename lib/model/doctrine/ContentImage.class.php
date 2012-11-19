@@ -12,4 +12,8 @@
  */
 class ContentImage extends BaseContentImage
 {
+    public function getType()
+    {
+        return ContentTable::CONTENT_IMAGE;
+    }
 }
