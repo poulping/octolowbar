@@ -100,6 +100,7 @@ class timelineActions extends sfActions
         if ($form->isValid())
         {
             $this->getUser()->setFlash('content_add.success', 'Your content has been succesfully added');
+            //var_dump($form->getObject()->getType());exit;
             $form->save();
 
             return true;

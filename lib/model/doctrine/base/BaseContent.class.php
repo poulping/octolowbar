@@ -49,10 +49,10 @@ abstract class BaseContent extends sfDoctrineRecord
              'notnull' => true,
              'length' => 255,
              ));
-        $this->hasColumn('type', 'string', 10, array(
+        $this->hasColumn('type', 'string', 20, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 10,
+             'length' => 20,
              ));
         $this->hasColumn('date_published', 'datetime', null, array(
              'type' => 'datetime',

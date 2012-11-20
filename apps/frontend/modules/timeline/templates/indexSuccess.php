@@ -1,14 +1,17 @@
 OCTOLOWBAR
-
+<?php if ($contents) : ?>
 <ul id="timeline">
-    <li class="m-row" data-timestamp="">
-        <a href="#" class="m-item l-video">
-            <div class="commentsnb">3 comments</div>
-            <h2>Lorem ipsum dolor sit amet</h2>
-            <iframe width="560" height="315" src="http://www.youtube.com/embed/sQuTrTd0JgI?rel=0" frameborder="0" allowfullscreen></iframe>
+<?php foreach ($contents as $content) : ?>
+    <li class="m-row" data-timestamp="<?php echo $content->getDatePublished()?>">
+        <a href="#" class="m-item l-<?php echo $content->getType()?>">
+            <div class="commentsnb"><?php echo $content->getComments()->count()?> comments</div>
+            <h2><?php echo $content->getTitle()?></h2>
+            <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content)) ?>
             <div class="name">- Arnaud</div>
         </a>
     </li>
+<?php endforeach; ?>
+<?php /*
     <li class="m-row" data-timestamp="">
         <a href="#" class="m-item l-photo">
             <div class="commentsnb">No comments</div>
@@ -25,3 +28,5 @@ OCTOLOWBAR
         </a>
     </li>
 </ul>
+ */?>
+<?php endif; ?>

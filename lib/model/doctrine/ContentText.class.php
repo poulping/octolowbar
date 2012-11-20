@@ -12,7 +12,7 @@
  */
 class ContentText extends BaseContentText
 {
-    public function getType()
+    public function getSubType()
     {
         return ContentTable::CONTENT_TEXT;
     }

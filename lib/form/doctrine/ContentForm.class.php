@@ -12,13 +12,30 @@ class ContentForm extends BaseContentForm
 {
   public function configure()
   {
+
+
+      // content must be a type of content
+      if (!is_subclass_of($this->getObject(), 'Content'))
+      {
+          throw new sfException('object needs to be a descendant of Content');
+      }
+
+      //$this->setWidget('type', new sfWidgetFormInputHidden());
       $this->setWidget('title', new sfWidgetFormInputText());
 
       $this->setValidator('title', new sfValidatorString());
 
-      $this->setWidget('date_published', new sfWidgetFormDate());
+      $this->setWidget('date_published', new sfWidgetFormI18nDate(array('culture' => 'en')));
 
       $this->setValidator('date_published', new sfValidatorDate());
 
   }
+
+    protected function doUpdateObject($values)
+    {
+      $values['type'] = $this->getObject()->getType();
+        return parent::doUpdateObject($values);
+    }
+
+
 }

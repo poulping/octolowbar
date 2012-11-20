@@ -12,7 +12,7 @@
  */
 class ContentAudio extends BaseContentAudio
 {
-    public function getType()
+    public function getSubType()
     {
         return ContentTable::CONTENT_AUDIO;
     }

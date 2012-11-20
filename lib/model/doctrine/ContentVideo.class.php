@@ -12,7 +12,7 @@
  */
 class ContentVideo extends BaseContentVideo
 {
-    public function getType()
+    public function getSubType()
     {
         return ContentTable::CONTENT_VIDEO;
     }

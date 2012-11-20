@@ -9,7 +9,7 @@ Content:
     Timestampable: ~
   columns:
     title:          {  type: string(255), notnull: true     }
-    type:           { type: string(10),   notnull: true     }
+    type:           { type: string(20),   notnull: true     }
     date_published: { type: datetime,     notnull: true     }
 
 ContentVideo:
