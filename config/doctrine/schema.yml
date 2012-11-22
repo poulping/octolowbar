@@ -8,6 +8,7 @@ Content:
   actAs:
     Timestampable: ~
   columns:
+    username:       { type: string(255), notnull: true, default: barlow }
     title:          {  type: string(255), notnull: true     }
     type:           { type: string(20),   notnull: true     }
     date_published: { type: datetime,     notnull: true     }

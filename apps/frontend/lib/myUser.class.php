@@ -14,6 +14,9 @@ class myUser extends sfBasicSecurityUser
         {
             array_push($session_keys, $keys);
         }
+        else {
+            $session_keys = $keys;
+        }
         $this->setAttribute('content.keys',  array_unique($session_keys));
     }
 }

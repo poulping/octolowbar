@@ -13,6 +13,7 @@ abstract class BaseContentFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
+      'username'           => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'title'              => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'type'               => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'date_published'     => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
@@ -26,6 +27,7 @@ abstract class BaseContentFormFilter extends BaseFormFilterDoctrine
     ));
 
     $this->setValidators(array(
+      'username'           => new sfValidatorPass(array('required' => false)),
       'title'              => new sfValidatorPass(array('required' => false)),
       'type'               => new sfValidatorPass(array('required' => false)),
       'date_published'     => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
@@ -56,6 +58,7 @@ abstract class BaseContentFormFilter extends BaseFormFilterDoctrine
   {
     return array(
       'id'                 => 'Number',
+      'username'           => 'Text',
       'title'              => 'Text',
       'type'               => 'Text',
       'date_published'     => 'Date',

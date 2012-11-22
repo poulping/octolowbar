@@ -62,7 +62,7 @@ class timelineActions extends sfActions
         {
             if ($this->processForm($this->form, $request))
             {
-                $this->redirect('content_add');
+                $this->redirect('add_content');
             }
         }
 
@@ -75,7 +75,10 @@ class timelineActions extends sfActions
 
         if ($request->isMethod('post'))
         {
-            $this->processForm($this->form, $request);
+            if ($this->processForm($this->form, $request))
+            {
+                $this->redirect('add_content');
+            }
         }
 
         $this->setTemplate('add');
@@ -87,7 +90,10 @@ class timelineActions extends sfActions
 
         if ($request->isMethod('post'))
         {
-            $this->processForm($this->form, $request);
+            if ($this->processForm($this->form, $request))
+            {
+                $this->redirect('add_content');
+            }
         }
 
         $this->setTemplate('add');
@@ -113,5 +119,10 @@ class timelineActions extends sfActions
         $id = $request->getParameter('id');
         $this->forward404Unless($id);
         $this->content = ContentTable::getInstance()->getWithComments($id);
+    }
+
+    public function executeAjaxPolling(sfWebRequest $request)
+    {
+
     }
 }

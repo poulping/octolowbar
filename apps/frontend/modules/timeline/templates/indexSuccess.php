@@ -7,7 +7,7 @@ OCTOLOWBAR
             <div class="commentsnb"><?php echo $content->getComments()->count()?> comments</div>
             <h2><?php echo $content->getTitle()?></h2>
             <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content)) ?>
-            <div class="name">- Arnaud</div>
+            <div class="name">- <?php echo ucfirst($content->getUsername())?></div>
         </a>
     </li>
 <?php endforeach; ?>

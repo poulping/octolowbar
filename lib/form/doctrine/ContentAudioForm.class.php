@@ -17,7 +17,7 @@ class ContentAudioForm extends BaseContentAudioForm
     {
         parent::configure();
 
-        $this->useFields(array('title', 'date_published', 'video_url', 'video_thumb', 'content_additional'));
+        $this->useFields(array('username', 'title', 'date_published', 'video_url', 'video_thumb', 'content_additional'));
 
         $this->setWidget('video_thumb', new sfWidgetFormInputFile());
 

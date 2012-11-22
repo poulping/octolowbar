@@ -28,11 +28,32 @@ class ContentTable extends Doctrine_Table
         return Doctrine_Core::getTable('Content');
     }
 
+    public function getAllChronologicalQuery(Doctrine_Query $q = null)
+    {
+        if (is_null($q))
+        {
+            $q = $this->createQuery('c');
+        }
+        $alias = $q->getRootAlias();
+
+        $q->leftJoin($alias.'.Comments co')
+          ->orderBy($alias.'.date_published DESC');
+        return $q;
+    }
+
+    public function getAllChronologicalExcept(array $ids)
+    {
+        $q = $this->getAllChronologicalQuery(null);
+        $new_contents = $q->whereNotIn($q->getRootAlias().'.id', $ids)->execute();
+        if ($new_contents)
+        {
+            return json_encode($new_contents->toArray());
+        }
+        return false;
+    }
     public function getAllChronological()
     {
-        $q = $this->createQuery('c')
-            ->orderBy('c.date_published DESC');
-        return $q->execute();
+        return $this->getAllChronologicalQuery(null)->execute();
 
     }
 

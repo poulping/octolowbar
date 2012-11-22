@@ -17,7 +17,7 @@ class ContentTextForm extends BaseContentTextForm
     {
         parent::configure();
 
-        $this->useFields(array('title', 'date_published', 'content'));
+        $this->useFields(array('username', 'title', 'date_published', 'content'));
 
         $this->setValidator('content', new sfValidatorString());
     }

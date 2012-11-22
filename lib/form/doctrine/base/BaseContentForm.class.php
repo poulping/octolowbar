@@ -16,6 +16,7 @@ abstract class BaseContentForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'                 => new sfWidgetFormInputHidden(),
+      'username'           => new sfWidgetFormInputText(),
       'title'              => new sfWidgetFormInputText(),
       'type'               => new sfWidgetFormInputText(),
       'date_published'     => new sfWidgetFormInputText(),
@@ -30,6 +31,7 @@ abstract class BaseContentForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'                 => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
+      'username'           => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'title'              => new sfValidatorString(array('max_length' => 255)),
       'type'               => new sfValidatorString(array('max_length' => 20)),
       'date_published'     => new sfValidatorPass(),

@@ -17,7 +17,7 @@ class ContentImageForm extends BaseContentImageForm
   {
     parent::configure();
 
-      $this->useFields(array('title', 'date_published', 'image', 'content_additional'));
+      $this->useFields(array('username', 'title', 'date_published', 'image', 'content_additional'));
 
       $this->setWidget('image', new sfWidgetFormInputFile());
 
