@@ -119,6 +119,24 @@ class timelineActions extends sfActions
         $id = $request->getParameter('id');
         $this->forward404Unless($id);
         $this->content = ContentTable::getInstance()->getWithComments($id);
+        $this->forward404Unless($id);
+
+        $this->comment_form = new CommentForm(array(), array('content' => $this->content));
+
+    }
+
+    public function executeAddComment(sfWebRequest $request)
+    {
+        //$arrayValues = $request->getPostParameters();
+
+        $this->comment_form = new CommentForm();
+        $this->comment_form->bind($request->getParameter($this->comment_form->getName()));
+        if ($this->comment_form->isValid())
+        {
+            $comment = $this->comment_form->save();
+            $this->redirect('@show_content?id='.$comment->getContentId());
+        }
+        $this->setTemplate('show');
     }
 
     public function executeAjaxPolling(sfWebRequest $request)

@@ -17,19 +17,9 @@ class ContentVideoForm extends BaseContentVideoForm
   {
     parent::configure();
 
-      $this->useFields(array('username', 'title', 'date_published', 'video_url', 'video_thumb', 'content_additional'));
+      $this->useFields(array('username', 'title', 'date_published', 'video_id', 'content_additional'));
 
-      $this->setWidget('video_thumb', new sfWidgetFormInputFile());
-
-      $this->setValidator('video_url', new sfValidatorUrl());
-
-      $this->setValidator('video_thumb', new sfValidatorFile(array(
-          'mime_types'      => 'web_images',
-          'path'            => sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'lowbar',
-          'required'        => false
-
-      )));
-
+      $this->setValidator('video_id', new sfValidatorString());
   }
 
 }

@@ -34,6 +34,10 @@ add_content_text:
   url:   /timeline/add/text
   param: { module: timeline, action: addText }
 
+process_comment:
+  url: /timeline/comment/add
+  param: { module: timeline, action addComment }
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

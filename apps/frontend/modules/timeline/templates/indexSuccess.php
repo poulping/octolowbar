@@ -9,10 +9,10 @@
         <article data-remote="/timeline/item?id=1" data-col="<?php echo ($col++ % 2);?>" class="m-item l-<?php echo $content->getType()?>">
             <header>
                 <div class="name"><?php echo ucfirst($content->getUsername())?></div>
-                <div class="date">November 2008</div>
-                <h1 class="title"><?php echo $content->getTitle()?></h1>
+                <div class="date"><?php echo $content->getDateTimeObject('date_published')->format('m Y');?></div>
+                <h1 class="title"><?php echo link_to($content->getTitle(),'@show_content?id='.$content->getId())?></h1>
             </header>
-            <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content)) ?>
+            <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content, 'is_index' => true)) ?>
             <div class="commentsnb"><?php echo $content->getComments()->count()?> comments</div>
         </article>
     <?php endforeach; ?>

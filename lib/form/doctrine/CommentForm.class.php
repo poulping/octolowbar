@@ -12,6 +12,15 @@ class CommentForm extends BaseCommentForm
 {
   public function configure()
   {
+        $content = $this->getOption('content', false);
+        if ($content)
+        {
+            $this->getObject()->setContent($content);
+        }
 
+
+        $this->useFields(array('username', 'content', 'content_id'));
+
+      $this->setWidget('content_id', new sfWidgetFormInputHidden());
   }
 }

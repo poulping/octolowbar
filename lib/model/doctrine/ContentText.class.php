@@ -16,4 +16,9 @@ class ContentText extends BaseContentText
     {
         return ContentTable::CONTENT_TEXT;
     }
+
+    public function getContentAdditional()
+    {
+        return false;
+    }
 }

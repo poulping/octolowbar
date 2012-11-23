@@ -9,8 +9,7 @@
  * @property string $title
  * @property string $type
  * @property datetime $date_published
- * @property string $video_url
- * @property string $video_thumb
+ * @property string $video_id
  * @property string $content_additional
  * @property string $content
  * @property string $image
@@ -20,8 +19,7 @@
  * @method string              getTitle()              Returns the current record's "title" value
  * @method string              getType()               Returns the current record's "type" value
  * @method datetime            getDatePublished()      Returns the current record's "date_published" value
- * @method string              getVideoUrl()           Returns the current record's "video_url" value
- * @method string              getVideoThumb()         Returns the current record's "video_thumb" value
+ * @method string              getVideoId()            Returns the current record's "video_id" value
  * @method string              getContentAdditional()  Returns the current record's "content_additional" value
  * @method string              getContent()            Returns the current record's "content" value
  * @method string              getImage()              Returns the current record's "image" value
@@ -30,8 +28,7 @@
  * @method Content             setTitle()              Sets the current record's "title" value
  * @method Content             setType()               Sets the current record's "type" value
  * @method Content             setDatePublished()      Sets the current record's "date_published" value
- * @method Content             setVideoUrl()           Sets the current record's "video_url" value
- * @method Content             setVideoThumb()         Sets the current record's "video_thumb" value
+ * @method Content             setVideoId()            Sets the current record's "video_id" value
  * @method Content             setContentAdditional()  Sets the current record's "content_additional" value
  * @method Content             setContent()            Sets the current record's "content" value
  * @method Content             setImage()              Sets the current record's "image" value
@@ -67,12 +64,7 @@ abstract class BaseContent extends sfDoctrineRecord
              'type' => 'datetime',
              'notnull' => true,
              ));
-        $this->hasColumn('video_url', 'string', 255, array(
-             'type' => 'string',
-             'notnull' => true,
-             'length' => 255,
-             ));
-        $this->hasColumn('video_thumb', 'string', 255, array(
+        $this->hasColumn('video_id', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,
