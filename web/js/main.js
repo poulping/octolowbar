@@ -9,4 +9,4 @@ EIGHT = {
     init : function(){
        //alert("low");
     }
-}
+} 

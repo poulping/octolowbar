@@ -1,7 +1,67 @@
 
+.m-header{
+    padding:25px 0 12px;
+    background-color:$transwhite;
+    .intro{
+        float:left;
+        width:300px;
+        margin-right:10px;
+        text-align: center;
+        color:$darkgrey;
+    }
+    h2{margin-bottom:6px;}
+    .m-logo_ode{
+        margin:0 auto 10px;
+    }
+    .m-bonhomme{
+        float:left;
+        margin-right:10px;
+    }
+    .m-comment_box_wrapper{
+        float:left;
+    }
+    .l-wrapped{
+        @extend .clearfix;
+    }
+}
+
+
+.m-logo_ode{
+    width:226px;
+    height:70px;
+    margin:0;
+    background:$almostblack;
+    color:$almostblack;
+}
+
+.m-bonhomme{
+    width:120px;
+    height:218px;
+    background:$almostblack;
+}
+
+
 #timeline{
     padding:0;
     margin:0;
+}
+
+.m-col{
+    min-height: 200px;
+    &.l-col-1{
+        float:left;
+        width:369px;
+        padding-top:40px;
+        border-right:3px solid $darkgrey;
+    }
+    &.l-col-2{
+        float:right;
+        width:368px;
+        padding-top:80px;
+        .m-item{
+            margin-left:33px;
+        }
+    }
 }
 
 .m-row{
@@ -11,17 +71,136 @@
 }
 
 .m-item{
-    color:black;
-    text-decoration:none;
-    .text{
-        margin:12px 0;
-        font-style: italic;
+    position:relative;
+    display:block;
+    padding:8px;
+    margin-bottom:30px;
+    width:335px - 16px;
+    background:$white;
+    @include border-radius(15px);
+    @include box-shadow(rgba(0, 0, 0, 0.3) 3px 3px 6px -1px);
+
+    header{
+        padding:4px 8px;
+        .text{
+            margin:12px 0;
+            font-style: italic;
+        }
+        .date{
+            float:right;
+            color:$lightgrey;
+        }
+        .name{
+            float:left;
+            margin:0;
+            font: {
+                size:18px;
+                family:$fontstackheader;
+            }
+        }
+        .title{
+            clear:both;
+            margin-bottom:12px;
+            font: {
+                size:24px;
+                family:$fontstackheader;
+            }
+        }
     }
-    .name{
-        margin:12px 0;
-        font-style: italic;
+    .img-wrapper{
+        border:8px solid $beige;
+        @include border-bottom-radius(10px);
+        img{width:100%;}
     }
-    .l-video{}
-    .l-photo{}
-    .l-text{}
+    &.l-video{}
+    &.l-photo{}
+    &.l-text{}
+
+    //THE ARROW
+    &:before{
+        content:"";
+        display:block;
+        position:absolute;
+        top:30px;
+    }
+
+    .l-col-1 &:before{
+        right:-18px;
+        @include triangle("right", $white, 18px);
+    }
+
+    .l-col-2 &:before{
+        left:-18px;
+        @include triangle("left", $white, 18px);
+    }
+
+    //THE DOT
+    &:after{
+        content:"";
+        display:block;
+        position:absolute;
+        top:44px;
+        height:8px;
+        width:8px;
+        background: $darkgrey;
+        @include border-radius(4em);
+        border:3px solid #d5d3d3;
+    }
+
+    .l-col-1 &:after{
+        right:-43px;
+    }
+
+    .l-col-2 &:after{
+        left:-41px;
+    }
+}
+
+.m-comment_box_wrapper{
+    position:relative;
+    width:300px;
+    .comment_box{
+        position:relative;
+        z-index:11;
+        padding:22px 22px 30px 22px;
+        background-color:$beige;
+        border:6px solid $white;
+        @include border-radius(15px);
+        @include box-shadow(rgba(0, 0, 0, 0.2) 3px 3px 6px -2px);
+        font:{
+            size:22px;
+            family: $fontstackheader;
+        }
+        line-height: 24px;
+        &:after{
+            content:"";
+            display:block;
+            position:absolute;
+            right:10px;
+            bottom:10px;
+            background:$almostblack;
+            height:24px;
+            width:30px;
+        }
+    }
+    &:before, &:after{
+        content:"";
+        display:block;
+        position:absolute;
+        @include rotate(45deg);
+    }
+    &:before{
+        z-index:10;
+        top:68px;
+        left:-32px;
+        @include triangle("up", $white, 26px);
+        @include box-shadow(rgba(0, 0, 0, 0.1) 6px 5px 7px -4px);
+    }
+    &:after{
+        z-index:12;
+        top:74px;
+        left:-18px;
+        @include triangle("up", $beige, 18px);
+    }
+
 }

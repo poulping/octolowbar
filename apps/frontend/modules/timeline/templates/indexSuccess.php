@@ -1,32 +1,32 @@
-OCTOLOWBAR
 <?php if ($contents) : ?>
-<ul id="timeline">
-<?php foreach ($contents as $content) : ?>
-    <li class="m-row" data-timestamp="<?php echo $content->getDatePublished()?>">
-        <a href="#" class="m-item l-<?php echo $content->getType()?>">
-            <div class="commentsnb"><?php echo $content->getComments()->count()?> comments</div>
-            <h2><?php echo $content->getTitle()?></h2>
+<div id="timeline">
+
+    <div class="m-col l-col-1" data-col="0">
+    <?php
+        $col = 0;
+    ?>
+    <?php foreach ($contents as $content) : ?>
+        <article data-remote="/timeline/item?id=1" data-col="<?php echo ($col++ % 2);?>" class="m-item l-<?php echo $content->getType()?>">
+            <header>
+                <div class="name"><?php echo ucfirst($content->getUsername())?></div>
+                <div class="date">November 2008</div>
+                <h1 class="title"><?php echo $content->getTitle()?></h1>
+            </header>
             <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content)) ?>
-            <div class="name">- <?php echo ucfirst($content->getUsername())?></div>
-        </a>
-    </li>
-<?php endforeach; ?>
-<?php /*
-    <li class="m-row" data-timestamp="">
-        <a href="#" class="m-item l-photo">
-            <div class="commentsnb">No comments</div>
-            <h2>Aenean non mi</h2>
-            <img src="http://placekitten.com/560/315" width="560" height="315"/>
-            <div class="name">- Mathieu</div>
-        </a>
-    </li>
-    <li class="m-row" data-timestamp="">
-        <a href="#" class="m-item l-text">
-            <div class="commentsnb">6 comments</div>
-            <h2>Duis tempus fringilla pulvinar</h2>
-            <div class="name">- Alex</div>
-        </a>
-    </li>
-</ul>
- */?>
+            <div class="commentsnb"><?php echo $content->getComments()->count()?> comments</div>
+        </article>
+    <?php endforeach; ?>
+    </div>
+    <div class="m-col l-col-2" data-col="1">
+
+        <article data-remote="/timeline/item?id=1" data-col="1" class="m-item l-audio">
+            <div class="name">Barlow</div>
+            <h1 class="title">my test</h1>
+            <!-- <iframe width="560" height="315" src="http://www.youtube.com/embed/QSETdYyOGig" frameborder="0" allowfullscreen></iframe> -->
+
+            <div class="img-wrapper"><img src="http://img.youtube.com/vi/QSETdYyOGig/hqdefault.jpg"></div>            <div class="commentsnb">0 comments</div>
+        </article>
+
+    </div>
+</div>
 <?php endif; ?>

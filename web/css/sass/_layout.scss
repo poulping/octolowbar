@@ -1,15 +1,12 @@
 
-
+.l-wrapped{
+    margin:0 auto;
+    width:$containersize;
+}
 
 
 #container{
-    width:$containersize;
+    @extend .clearfix;
     min-width: $containermin;
-    margin:0 auto;
-    background:#6fcee4;
-    >.wrapper{
-        margin:0 $wrapperpadding;
-        padding:$wrapperpadding;
-        background:$white;
-    }
+    background:inline-image('../images/bg-pattern_pantoufles.png');
 }
