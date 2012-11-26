@@ -15,7 +15,7 @@
         <header class="m-header">
             <div class="l-wrapped">
                 <div class="intro">
-                    <h1 class="m-logo_ode">Ode to Barlow</h1>
+                    <h1 class="m-logo_ode"><a href="/">Ode to Barlow</a></h1>
                     <h2>8 Years at Twist Image</h2>
                     Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
                 </div>

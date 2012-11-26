@@ -863,12 +863,12 @@ select,
 textarea {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
   font-size: 13px;
-  color: black;
+  color: #27283c;
 }
 
 /* line 18, sass/_base.scss */
 body {
-  background: #e2e2e2;
+  background: #d5d2d2;
 }
 
 /* line 23, sass/_base.scss */
@@ -925,17 +925,23 @@ p {
 .m-header .m-logo_ode {
   margin: 0 auto 10px;
 }
-/* line 16, sass/_modules.scss */
+/* line 15, sass/_modules.scss */
+.m-header .m-logo_ode a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+/* line 21, sass/_modules.scss */
 .m-header .m-bonhomme {
   float: left;
   margin-right: 10px;
 }
-/* line 20, sass/_modules.scss */
+/* line 25, sass/_modules.scss */
 .m-header .m-comment_box_wrapper {
   float: left;
 }
 
-/* line 29, sass/_modules.scss */
+/* line 34, sass/_modules.scss */
 .m-logo_ode {
   width: 226px;
   height: 70px;
@@ -944,49 +950,49 @@ p {
   color: #27283c;
 }
 
-/* line 37, sass/_modules.scss */
+/* line 42, sass/_modules.scss */
 .m-bonhomme {
   width: 120px;
   height: 218px;
   background: #27283c;
 }
 
-/* line 44, sass/_modules.scss */
+/* line 49, sass/_modules.scss */
 #timeline {
   padding: 0;
   margin: 0;
 }
 
-/* line 49, sass/_modules.scss */
+/* line 54, sass/_modules.scss */
 .m-col {
   min-height: 200px;
 }
-/* line 51, sass/_modules.scss */
+/* line 56, sass/_modules.scss */
 .m-col.l-col-1 {
   float: left;
   width: 369px;
   padding-top: 40px;
   border-right: 3px solid #7d7d7d;
 }
-/* line 57, sass/_modules.scss */
+/* line 62, sass/_modules.scss */
 .m-col.l-col-2 {
   float: right;
   width: 368px;
   padding-top: 80px;
 }
-/* line 61, sass/_modules.scss */
+/* line 66, sass/_modules.scss */
 .m-col.l-col-2 .m-item {
   margin-left: 33px;
 }
 
-/* line 67, sass/_modules.scss */
+/* line 72, sass/_modules.scss */
 .m-row {
   list-style: none;
   border-bottom: 1px solid #6fcee4;
   padding: 36px 0;
 }
 
-/* line 73, sass/_modules.scss */
+/* line 78, sass/_modules.scss */
 .m-item {
   position: relative;
   display: block;
@@ -1003,35 +1009,35 @@ p {
   -moz-box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 6px -1px;
   box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 6px -1px;
 }
-/* line 83, sass/_modules.scss */
+/* line 88, sass/_modules.scss */
 .m-item header {
   padding: 4px 8px;
 }
-/* line 85, sass/_modules.scss */
+/* line 90, sass/_modules.scss */
 .m-item header .text {
   margin: 12px 0;
   font-style: italic;
 }
-/* line 89, sass/_modules.scss */
+/* line 94, sass/_modules.scss */
 .m-item header .date {
   float: right;
   color: #8c8c8c;
 }
-/* line 93, sass/_modules.scss */
+/* line 98, sass/_modules.scss */
 .m-item header .name {
   float: left;
   margin: 0;
   font-size: 18px;
   font-family: "LobsterTwo-BoldItalic", serif;
 }
-/* line 101, sass/_modules.scss */
+/* line 106, sass/_modules.scss */
 .m-item header .title {
   clear: both;
   margin-bottom: 12px;
   font-size: 24px;
   font-family: "LobsterTwo-BoldItalic", serif;
 }
-/* line 110, sass/_modules.scss */
+/* line 115, sass/_modules.scss */
 .m-item .img-wrapper {
   border: 8px solid #e7dfc8;
   -moz-border-radius-bottomleft: 10px;
@@ -1041,18 +1047,18 @@ p {
   -webkit-border-bottom-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-/* line 113, sass/_modules.scss */
+/* line 118, sass/_modules.scss */
 .m-item .img-wrapper img {
   width: 100%;
 }
-/* line 120, sass/_modules.scss */
+/* line 125, sass/_modules.scss */
 .m-item:before {
   content: "";
   display: block;
   position: absolute;
   top: 30px;
 }
-/* line 127, sass/_modules.scss */
+/* line 132, sass/_modules.scss */
 .l-col-1 .m-item:before {
   right: -18px;
   border-bottom: 18px solid transparent;
@@ -1061,7 +1067,7 @@ p {
   height: 0;
   width: 0;
 }
-/* line 132, sass/_modules.scss */
+/* line 137, sass/_modules.scss */
 .l-col-2 .m-item:before {
   left: -18px;
   border-bottom: 18px solid transparent;
@@ -1070,7 +1076,7 @@ p {
   height: 0;
   width: 0;
 }
-/* line 138, sass/_modules.scss */
+/* line 143, sass/_modules.scss */
 .m-item:after {
   content: "";
   display: block;
@@ -1086,21 +1092,21 @@ p {
   border-radius: 4em;
   border: 3px solid #d5d3d3;
 }
-/* line 150, sass/_modules.scss */
+/* line 155, sass/_modules.scss */
 .l-col-1 .m-item:after {
   right: -43px;
 }
-/* line 154, sass/_modules.scss */
+/* line 159, sass/_modules.scss */
 .l-col-2 .m-item:after {
   left: -41px;
 }
 
-/* line 159, sass/_modules.scss */
+/* line 164, sass/_modules.scss */
 .m-comment_box_wrapper {
   position: relative;
   width: 300px;
 }
-/* line 162, sass/_modules.scss */
+/* line 167, sass/_modules.scss */
 .m-comment_box_wrapper .comment_box {
   position: relative;
   z-index: 11;
@@ -1119,7 +1125,7 @@ p {
   font-family: "LobsterTwo-BoldItalic", serif;
   line-height: 24px;
 }
-/* line 175, sass/_modules.scss */
+/* line 180, sass/_modules.scss */
 .m-comment_box_wrapper .comment_box:after {
   content: "";
   display: block;
@@ -1130,7 +1136,7 @@ p {
   height: 24px;
   width: 30px;
 }
-/* line 186, sass/_modules.scss */
+/* line 191, sass/_modules.scss */
 .m-comment_box_wrapper:before, .m-comment_box_wrapper:after {
   content: "";
   display: block;
@@ -1141,7 +1147,7 @@ p {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* line 192, sass/_modules.scss */
+/* line 197, sass/_modules.scss */
 .m-comment_box_wrapper:before {
   z-index: 10;
   top: 68px;
@@ -1155,7 +1161,7 @@ p {
   -moz-box-shadow: rgba(0, 0, 0, 0.1) 6px 5px 7px -4px;
   box-shadow: rgba(0, 0, 0, 0.1) 6px 5px 7px -4px;
 }
-/* line 199, sass/_modules.scss */
+/* line 204, sass/_modules.scss */
 .m-comment_box_wrapper:after {
   z-index: 12;
   top: 74px;
@@ -1167,7 +1173,7 @@ p {
   width: 0;
 }
 
-/* line 216, sass/_modules.scss */
+/* line 221, sass/_modules.scss */
 .modal {
   position: fixed;
   top: 50%;
@@ -1185,19 +1191,19 @@ p {
   -moz-background-clip: padding-box;
   background-clip: padding-box;
 }
-/* line 232, sass/_modules.scss */
+/* line 237, sass/_modules.scss */
 .modal .modal-body {
   min-height: 100px;
   overflow: hidden;
 }
-/* line 236, sass/_modules.scss */
+/* line 241, sass/_modules.scss */
 .modal > .b-close {
   position: absolute;
   top: -15px;
   right: -15px;
 }
 
-/* line 243, sass/_modules.scss */
+/* line 248, sass/_modules.scss */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -1207,12 +1213,12 @@ p {
   z-index: 1040;
   background-color: #000000;
 }
-/* line 251, sass/_modules.scss */
+/* line 256, sass/_modules.scss */
 .modal-backdrop.fade {
   opacity: 0;
 }
 
-/* line 254, sass/_modules.scss */
+/* line 259, sass/_modules.scss */
 .modal-backdrop, .modal-backdrop.fade.in {
   opacity: 0.7;
   filter: alpha(opacity=70);
