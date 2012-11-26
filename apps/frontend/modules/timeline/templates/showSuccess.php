@@ -14,8 +14,10 @@
 <?php endif; ?>
 
 <?php echo form_tag('process_comment') ?>
-<table>
-<?php echo $comment_form?>
-<tr><td colspan="2"><input type="submit" value="send" /></td></tr>
-</table>
+    <table>
+        <?php echo $comment_form?>
+        <tr>
+            <td colspan="2"><input type="submit" value="send" /></td>
+        </tr>
+    </table>
 </form>

@@ -1,3 +1,11 @@
+
+//Global transition settings
+%globaltransition{
+    @include transition-duration(0.2s);
+    @include transition-timing-function(linear);
+}
+
+
 @-webkit-keyframes fade-in {
     0%   { opacity: 0; }
     50%   { opacity: 0; }
@@ -7,4 +15,12 @@
 .m-item{
     // -webkit-animation-name: fade-in;
     // -webkit-animation-duration: 0.8s;
+}
+
+//Fading animation for the modal box
+.fade{
+    opacity: 0;
+    @extend %globaltransition;
+    @include transition-property(opacity);
+    &.in{opacity: 1;}
 }

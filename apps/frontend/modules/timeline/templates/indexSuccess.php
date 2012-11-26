@@ -24,9 +24,21 @@
             <h1 class="title">my test</h1>
             <!-- <iframe width="560" height="315" src="http://www.youtube.com/embed/QSETdYyOGig" frameborder="0" allowfullscreen></iframe> -->
 
-            <div class="img-wrapper"><img src="http://img.youtube.com/vi/QSETdYyOGig/hqdefault.jpg"></div>            <div class="commentsnb">0 comments</div>
+            <div class="img-wrapper"><img src="http://img.youtube.com/vi/QSETdYyOGig/hqdefault.jpg"></div><div class="commentsnb">0 comments</div>
         </article>
 
     </div>
 </div>
+
+<!-- Modal -->
+<div id="modal-item-view" class="modal hide fade">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Modal header</h3>
+    </div>
+    <div class="modal-body">
+        <p>One fine body…</p>
+    </div>
+</div>
+
 <?php endif; ?>
