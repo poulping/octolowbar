@@ -5,8 +5,8 @@
     <?php
         $col = 0;
     ?>
-    <?php foreach ($contents as $content) : ?>
-        <article data-remote="<?php echo url_for('@show_content?id='.$content->getId())?>" data-col="<?php echo ($col++ % 2);?>" class="m-item l-<?php echo $content->getType()?>">
+    <?php foreach ($contents as $content) : $col++; ?>
+        <article data-remote="<?php echo url_for('@show_content?id='.$content->getId())?>" data-col="<?php echo $col;?>" class="m-item l-<?php echo $content->getType()?>">
             <header>
                 <div class="name"><?php echo ucfirst($content->getUsername())?></div>
                 <div class="date"><?php echo $content->getDateTimeObject('date_published')->format('m Y');?></div>
@@ -15,6 +15,7 @@
             <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content, 'is_index' => true)) ?>
             <div class="commentsnb"><?php echo $content->getComments()->count()?> comments</div>
         </article>
+            <?php if ($col >=2) {$col=0;} ?>
     <?php endforeach; ?>
     </div>
     <div class="m-col l-col-2" data-col="1">
