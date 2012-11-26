@@ -6,7 +6,7 @@
         $col = 0;
     ?>
     <?php foreach ($contents as $content) : ?>
-        <article data-remote="/timeline/item?id=1" data-col="<?php echo ($col++ % 2);?>" class="m-item l-<?php echo $content->getType()?>">
+        <article data-remote="<?php echo url_for('@show_content?id='.$content->getId())?>" data-col="<?php echo ($col++ % 2);?>" class="m-item l-<?php echo $content->getType()?>">
             <header>
                 <div class="name"><?php echo ucfirst($content->getUsername())?></div>
                 <div class="date"><?php echo $content->getDateTimeObject('date_published')->format('m Y');?></div>
