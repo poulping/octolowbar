@@ -31,13 +31,24 @@ EIGHT = {
 
         //Assigning columns
         var itemCol,
+            itemTime,
+            item,
             $col = $('.m-col');
 
         $('.m-item').each(function(){
             itemCol = $(this).data('col');
+            itemTime = $(this).data('time');
+            item = $(this);
             $col.filter('[data-col='+itemCol+']').append($(this));
             $(this).css('opacity', 1);
+            // Add the badges
+            $('.js-badge').each(function(){
+                if($(this).data('time') >= itemTime){
+                    $(this).insertBefore(item);
+                }
+            });
         });
+
 
         //Adding background
         $timelineContainer.append(background);
@@ -45,15 +56,11 @@ EIGHT = {
         var $background = $('#js-dynamic-background');
         $background.height(timelineContainerHeight).css('opacity', 1);
 
-        //fake badge
-        $('.m-col[data-col="1"]').append('<div class="js-badge m-year-badge" data-badge="07"> <div class="year">07</div> <div class="icon"></div></div>');
-        $('.m-item').eq(7).after('<div class="js-badge m-year-badge" data-badge="08"> <div class="year">08</div> <div class="icon"></div></div>');
-
         $('.js-badge').waypoint(function(event) {
             var newBadge = $(this).data('badge');
             console.log(newBadge);
-            $background.stop(true, false).fadeOut(200, function(){
-                $(this).attr('data-badge', newBadge).fadeIn(200);
+            $background.stop(true, false).fadeTo(200, 0.2, function(){
+                $(this).attr('data-badge', newBadge).fadeTo(200, 1);
             });
         }/*, {
             offset: 'bottom-in-view'
