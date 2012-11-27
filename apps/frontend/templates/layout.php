@@ -22,7 +22,9 @@
                 <div class="m-bonhomme"></div>
                 <div class="m-comment_box_wrapper">
                     <div class="comment_box">
-                        “Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non.”
+                        <p>“Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non.”</p>
+                        <p>“Maecenas sed diam eget risus varius blandit sit amet non.”</p>
+                        <p>“Sed posuere consectetur est at lobortis.”</p>
                     </div>
                 </div>
             </div>

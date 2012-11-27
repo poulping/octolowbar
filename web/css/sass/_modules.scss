@@ -2,6 +2,7 @@
 .m-header{
     padding:25px 0 12px;
     background-color:$transwhite;
+    .l-wrapped{position:relative;}
     .intro{
         float:left;
         width:300px;
@@ -11,19 +12,16 @@
     }
     h2{margin-bottom:6px;}
     .m-logo_ode{
-        margin:0 auto 10px;
-        a{
-            display:block;
-            height:100%;
-            width:100%;
-        }
+        margin:0 auto 10px
     }
     .m-bonhomme{
         float:left;
         margin-right:10px;
     }
     .m-comment_box_wrapper{
-        float:left;
+        position:absolute;
+        top:20px;
+        right:-12px;
     }
     .l-wrapped{
         @extend .clearfix;
@@ -36,19 +34,27 @@
     height:70px;
     margin:0;
     background:$almostblack;
-    color:$almostblack;
+    color:$almostblack;;
+    a{
+        display:block;
+        height:100%;
+        width:100%;
+        color:$almostblack;
+    }
 }
 
 .m-bonhomme{
-    width:120px;
+    width:146px;
     height:218px;
-    background:$almostblack;
+    background:inline-image('img-barlow.png') no-repeat;
 }
 
 
 #timeline{
+    position:relative;
     padding:0;
     margin:0;
+
 }
 
 .m-col{
@@ -64,7 +70,7 @@
         width:368px;
         padding-top:80px;
         .m-item{
-            margin-left:33px;
+            margin-left:34px;
         }
     }
 }
@@ -76,8 +82,9 @@
 }
 
 .m-item{
-    position:relative;
     display:block;
+    position:relative;
+    opacity:0;
     padding:8px;
     margin-bottom:30px;
     width:335px - 16px;
@@ -85,8 +92,10 @@
     @include border-radius(15px);
     @include box-shadow(rgba(0, 0, 0, 0.3) 3px 3px 6px -1px);
 
+    cursor:pointer;
+
     header{
-        padding:4px 8px;
+        padding:4px 8px 0 8px;
         .text{
             margin:12px 0;
             font-style: italic;
@@ -117,6 +126,13 @@
         @include border-bottom-radius(10px);
         img{width:100%;}
     }
+    .txt-wrapper{padding:0 8px;}
+    .commentsnb{
+        padding:4px 8px 0;
+        text-align: right;
+        color:$lightgrey;
+    }
+
     &.l-video{}
     &.l-photo{}
     &.l-text{}
@@ -161,6 +177,11 @@
     }
 }
 
+.img-wrapper{
+    img{width:100%;}
+}
+
+
 .m-comment_box_wrapper{
     position:relative;
     width:300px;
@@ -168,6 +189,7 @@
         position:relative;
         z-index:11;
         padding:22px 22px 30px 22px;
+        height: 125px;
         background-color:$beige;
         border:6px solid $white;
         @include border-radius(15px);
@@ -177,13 +199,15 @@
             family: $fontstackheader;
         }
         line-height: 24px;
+        >p{margin-top:22px;}
         &:after{
             content:"";
             display:block;
             position:absolute;
             right:10px;
             bottom:10px;
-            background:$almostblack;
+            @extend %iconsprite;
+            background-position:0 0;
             height:24px;
             width:30px;
         }
@@ -207,25 +231,88 @@
         left:-18px;
         @include triangle("up", $beige, 18px);
     }
+}
 
+.m-fullview{
+    .content{
+        margin:12px 0;
+    }
+    form{
+        label{display:block;}
+    }
+
+}
+.m-comments{
+    margin:0;
+    padding:0;
+    li{
+        list-style:none;
+        border-top:1px solid $almostblack;
+        line-height: 24px;
+    }
+}
+
+.m-year-badge{
+    height:84px;
+    width:84px;
+    margin:24px auto 18px;
+    background:$beige;
+    border:6px solid $white;
+    @include border-radius(4em);
+    @include box-shadow(rgba(0, 0, 0, 0.2) 3px 3px 6px -2px);
+    .year{
+        font:{
+            size: 26px;
+            family:$fontstackheader;
+        }
+        text-align: center;
+        &:before{
+            content:'‘';
+        }
+    }
+    .icon{
+
+    }
+}
+
+
+.m-background{
+    /*&[data-badge="12"]{
+        background:inline-image('bg-year_12.png');
+    }
+    &[data-badge="11"]{
+        background:inline-image('bg-year_11.png');
+    }
+    &[data-badge="10"]{
+        background:inline-image('bg-year_10.png');
+    }*/
+    &[data-badge="09"]{
+        background:inline-image('bg-year_09.png');
+    }
+    &[data-badge="08"]{
+        background:inline-image('bg-year_08.png');
+    }
+    &[data-badge="07"]{
+        background:inline-image('bg-year_07.png');
+    }
+    &[data-badge="06"]{
+        background:inline-image('bg-year_06.png');
+    }
+    &[data-badge="05"]{
+        background:inline-image('bg-year_05.png');
+    }
 }
 
 
 
-
-
-
-
-$modalwidth:833px - 96px * 2;
-$modalnegmargin:833px/2;
 .modal {
     position: fixed;
     top: 50%;
     left: 50%;
     z-index: 1050;
-    width: $modalwidth;
-    padding:26px 62px 0px;
-    margin: -295px 0 0 -380px;
+    width: 560px;
+    padding:26px 62px 26px;
+    margin: -250px 0 0 -280px;
     background:$white;
     border: 1px solid rgba(0, 0, 0, 0.3);
     @include box-shadow(rgba(0, 0, 0, 0.3) 0 3px 7px);
@@ -235,8 +322,9 @@ $modalnegmargin:833px/2;
     .modal-header{}
     .modal-footer{}
     .modal-body {
-        min-height:100px;
-        overflow:hidden;
+        max-height: 400px;
+        padding: 15px;
+        overflow-y: auto;
     }
     > .b-close{
         position:absolute;

@@ -12,9 +12,10 @@
     100% { opacity: 1; }
 }
 
-.m-item{
-    // -webkit-animation-name: fade-in;
-    // -webkit-animation-duration: 0.8s;
+.m-item, .m-year-badge{
+    @include transition-duration(0.8s);
+    @include transition-timing-function(linear);
+    @include transition-property(opacity);
 }
 
 //Fading animation for the modal box
@@ -23,4 +24,10 @@
     @extend %globaltransition;
     @include transition-property(opacity);
     &.in{opacity: 1;}
+}
+
+.m-background{
+    @include transition-duration(0.3s);
+    @include transition-timing-function(linear);
+    @include transition-property(opacity);
 }
