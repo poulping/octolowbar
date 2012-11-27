@@ -43,7 +43,7 @@ class ContentTable extends Doctrine_Table
 
     public function getLatestChronologicalExcept(array $ids, $return_as_json=false)
     {
-        
+
         $q = $this->getAllChronologicalQuery(null);
         $new_contents = $q->whereNotIn($q->getRootAlias().'.id', $ids)->limit(1)->fetchOne();
         if ($new_contents)
