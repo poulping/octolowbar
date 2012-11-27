@@ -12,7 +12,10 @@ class myUser extends sfBasicSecurityUser
         $session_keys = $this->getKeys();
         if (!empty($session_keys))
         {
-            array_push($session_keys, $keys);
+            foreach ($keys as $key)
+            {
+                $session_keys[] = $key;
+            }
         }
         else {
             $session_keys = $keys;
