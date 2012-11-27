@@ -38,6 +38,10 @@ process_comment:
   url: /timeline/comment/add
   param: { module: timeline, action addComment }
 
+poll_new_comment:
+  url: /timeline/poll
+  param: { module: timeline, action ajaxPolling }
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:
