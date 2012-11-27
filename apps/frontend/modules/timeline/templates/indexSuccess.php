@@ -7,7 +7,7 @@
     <?php foreach ($contents as $content) : $col++; ?>
 
         <?php if ($previous_year != $content->getDateTimeObject('date_published')->format('Y')) : ?>
-            <?php include_partial('badge', array('content' => $content)) ?>here
+            <?php include_partial('badge', array('content' => $content)) ?>
             <?php $previous_year = $content->getDateTimeObject('date_published')->format('Y') ?>
         <?php endif; ?>
 
