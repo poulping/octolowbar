@@ -1,4 +1,4 @@
-<article data-time="<?php echo $content->getDateTimeObject('date_published')->format('U');?>" data-remote="<?php echo url_for('@show_content?id='.$content->getId())?>" data-col="<?php echo $col;?>" class="m-item l-<?php echo $content->getType()?>">
+<article data-time="<?php echo $content->getDateTimeObject('date_published')->format('U');?>" data-remote="<?php echo url_for('@show_content?id='.$content->getId())?>"<?php echo ($col) ? ' data-col="'.$col.'"' : '';?> class="m-item l-<?php echo $content->getType()?>">
     <header>
         <div class="name"><?php echo ucfirst($content->getUsername())?></div>
         <div class="date"><?php echo $content->getDateTimeObject('date_published')->format('M Y');?></div>

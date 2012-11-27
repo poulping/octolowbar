@@ -141,6 +141,13 @@ class timelineActions extends sfActions
 
     public function executeAjaxPolling(sfWebRequest $request)
     {
+        $sent = $this->getUser()->getKeys();
+        $new_content = ContentTable::getInstance()->getLatestChronologicalExcept($sent);
 
+        if ($new_content)
+        {
+            return $this->getPartial('contentContainer', array('content' => $new_content, 'col' => false));
+        }
+        return $this->renderText('0');
     }
 }

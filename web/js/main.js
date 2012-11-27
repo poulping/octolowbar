@@ -19,15 +19,15 @@ EIGHT = {
     layout : function(){
        $('.m-comment_box_wrapper .comment_box').cycle();
 
-
+       $.get('/timeline/poll', function(response){
+            console.log(response);
+       });
     },
     timeline : function(){
         var $timelineContainer = $('#container'),
             timelineContainerHeight = $timelineContainer.height();
             $timeline = $('#timeline'),
             background = '<div id="js-dynamic-background" class="m-background" data-badge="09">';
-
-
 
         //Assigning columns
         var itemCol,
