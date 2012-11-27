@@ -41,13 +41,18 @@ class ContentTable extends Doctrine_Table
         return $q;
     }
 
-    public function getAllChronologicalExcept(array $ids)
+    public function getLatestChronologicalExcept(array $ids, $return_as_json=false)
     {
         $q = $this->getAllChronologicalQuery(null);
-        $new_contents = $q->whereNotIn($q->getRootAlias().'.id', $ids)->execute();
+        $new_contents = $q->whereNotIn($q->getRootAlias().'.id', $ids)->limit(1)->fetchOne();
         if ($new_contents)
         {
-            return json_encode($new_contents->toArray());
+            if ($return_as_json)
+            {
+                return json_encode($new_contents->toArray());
+            }
+            return $new_contents;
+
         }
         return false;
     }
