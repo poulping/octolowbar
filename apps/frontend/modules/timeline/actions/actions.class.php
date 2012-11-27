@@ -147,7 +147,7 @@ class timelineActions extends sfActions
         if ($new_content)
         {
             $this->getUser()->setKeysSent(array($new_content->getPrimaryKey()));
-            return $this->getPartial('contentContainer', array('content' => $new_content, 'col' => false));
+            return $this->renderPartial('timeline/contentContainer', array('content' => $new_content, 'col' => false));
         }
         return $this->renderText('0');
     }
