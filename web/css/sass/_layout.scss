@@ -1,4 +1,8 @@
-
+html,
+body{
+    height:100%;
+    min-height:100%;
+}
 .l-wrapped{
     margin:0 auto;
     width:$containersize;
@@ -9,6 +13,10 @@
     @extend .clearfix;
     position:relative;
     min-width: $containermin;
+    >.l-wrapped{
+        position:relative;
+        z-index:1001;
+    }
     .m-background{
         opacity:0;
         z-index:1;
@@ -16,9 +24,16 @@
         top:0;
         left:0;
         width:100%;
+        min-height: 100%;
     }
     #timeline, #addform{
         position:relative;
         z-index:1000;
+    }
+    .m-notifications{
+        position:fixed;
+        bottom:20px;
+        left:20px;
+        z-index:1001;
     }
 }

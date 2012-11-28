@@ -1,6 +1,5 @@
 <?php if ($contents) : ?>
 <div id="timeline">
-
     <?php $col = 0; ?>
     <?php $previous_year = false; ?>
     <?php foreach ($contents as $content) : $col++; ?>
@@ -33,3 +32,6 @@
 </div>
 
 <?php endif; ?>
+
+
+<div class="m-notifications"></div>

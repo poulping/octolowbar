@@ -62,13 +62,12 @@
     &.l-col-1{
         float:left;
         width:369px;
-        padding-top:40px;
         border-right:3px solid $darkgrey;
     }
     &.l-col-2{
         float:right;
         width:368px;
-        padding-top:80px;
+        padding-top:240px;
         .m-item{
             margin-left:34px;
         }
@@ -146,12 +145,12 @@
     }
 
     .l-col-1 &:before{
-        right:-18px;
+        right:-17px;
         @include triangle("right", $white, 18px);
     }
 
     .l-col-2 &:before{
-        left:-18px;
+        left:-17px;
         @include triangle("left", $white, 18px);
     }
 
@@ -169,7 +168,7 @@
     }
 
     .l-col-1 &:after{
-        right:-43px;
+        right:-42px;
     }
 
     .l-col-2 &:after{
@@ -255,9 +254,10 @@
 .m-year-badge{
     height:84px;
     width:84px;
-    margin:24px auto 18px;
+    margin:36px auto 24px;
     background:$beige;
     border:6px solid $white;
+    opacity:0;
     @include border-radius(4em);
     @include box-shadow(rgba(0, 0, 0, 0.2) 3px 3px 6px -2px);
     .year{
@@ -277,6 +277,7 @@
 
 
 .m-background{
+    height:100%;
     /*&[data-badge="12"]{
         background:inline-image('bg-year_12.png');
     }
