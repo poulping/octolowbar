@@ -16,7 +16,7 @@
     </ul>
     <?php endif; ?>
 
-    <?php echo form_tag('process_comment') ?>
+    <?php echo form_tag('@process_comment?for_content_id='.$content->getId()) ?>
         <table>
             <?php echo $comment_form?>
             <tr>

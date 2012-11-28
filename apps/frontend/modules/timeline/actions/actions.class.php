@@ -127,7 +127,7 @@ class timelineActions extends sfActions
 
     public function executeAddComment(sfWebRequest $request)
     {
-        //$arrayValues = $request->getPostParameters();
+        $this->forward404Unless($content_id = $request->getParameter('for_content_id'));
 
         $this->comment_form = new CommentForm();
         $this->comment_form->bind($request->getParameter($this->comment_form->getName()));
@@ -136,6 +136,8 @@ class timelineActions extends sfActions
             $comment = $this->comment_form->save();
             $this->redirect('@show_content?id='.$comment->getContentId());
         }
+        $this->content = ContentTable::getInstance()->find($content_id);
+        $this->forward404Unless($this->content);
         $this->setTemplate('show');
     }
 

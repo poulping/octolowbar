@@ -35,7 +35,7 @@ add_content_text:
   param: { module: timeline, action: addText }
 
 process_comment:
-  url: /timeline/comment/add
+  url: /timeline/comment/add/:for_content_id
   param: { module: timeline, action addComment }
 
 poll_new_comment:
