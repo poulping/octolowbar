@@ -20,16 +20,6 @@
 
 </div>
 
-<!-- Modal -->
-<div id="modal-item-view" class="modal hide fade">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    </div>
-    <div class="modal-body">
-        <!-- Content is remotely added here -->
-    </div>
-    <div class="modal-footer">&nbsp;</div>
-</div>
 
 <?php endif; ?>
 
