@@ -14,6 +14,12 @@ class ContentForm extends BaseContentForm
   {
 
 
+      $year = '2003';
+      $array_years = array();
+      for ($i = $year; $i < 2013; $i++)
+      {
+          $array_years[] = $i;
+      }
       // content must be a type of content
       if (!is_subclass_of($this->getObject(), 'Content'))
       {
@@ -25,7 +31,7 @@ class ContentForm extends BaseContentForm
 
       $this->setValidator('title', new sfValidatorString());
 
-      $this->setWidget('date_published', new sfWidgetFormI18nDate(array('culture' => 'en')));
+      $this->setWidget('date_published', new sfWidgetFormI18nDate(array('culture' => 'en', 'years' => $array_years)));
 
       $this->setValidator('date_published', new sfValidatorDate());
 
