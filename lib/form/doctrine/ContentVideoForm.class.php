@@ -20,6 +20,8 @@ class ContentVideoForm extends BaseContentVideoForm
       $this->useFields(array('username', 'title', 'date_published', 'video_id', 'content_additional'));
 
       $this->setValidator('video_id', new sfValidatorString());
+
+      $this->getWidget('video_id')->setLabel('Youtube Video Id');
   }
 
 }
