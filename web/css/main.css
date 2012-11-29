@@ -1547,7 +1547,7 @@ body {
   top: 50%;
   left: 50%;
   z-index: 1050;
-  width: 600px;
+  width: 616px;
   padding: 0;
   margin: -300px 0 0 -300px;
   border: 5px solid white;
@@ -1565,14 +1565,15 @@ body {
 .modal .modal-body {
   max-height: 575px;
   padding: 1px;
-  overflow-y: auto;
+  margin-right: 16px;
+  overflow-y: scroll;
   -webkit-border-radius: 24px;
   -moz-border-radius: 24px;
   -ms-border-radius: 24px;
   -o-border-radius: 24px;
   border-radius: 24px;
 }
-/* line 492, sass/_modules.scss */
+/* line 493, sass/_modules.scss */
 .modal .b-close {
   position: absolute;
   top: -15px;
@@ -1591,7 +1592,7 @@ body {
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 3px 3px 6px 1px;
   box-shadow: rgba(0, 0, 0, 0.6) 3px 3px 6px 1px;
 }
-/* line 503, sass/_modules.scss */
+/* line 504, sass/_modules.scss */
 .modal .b-close:after {
   content: "";
   display: block;
@@ -1603,7 +1604,7 @@ body {
   background-position: -50px 0;
 }
 
-/* line 519, sass/_modules.scss */
+/* line 520, sass/_modules.scss */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -1613,15 +1614,135 @@ body {
   z-index: 1040;
   background-color: #000000;
 }
-/* line 527, sass/_modules.scss */
+/* line 528, sass/_modules.scss */
 .modal-backdrop.fade {
   opacity: 0;
 }
 
-/* line 530, sass/_modules.scss */
+/* line 531, sass/_modules.scss */
 .modal-backdrop, .modal-backdrop.fade.in {
   opacity: 0.7;
   filter: alpha(opacity=70);
+}
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+/* line 548, sass/_modules.scss */
+.jspContainer {
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 553, sass/_modules.scss */
+.jspPane {
+  position: absolute;
+}
+
+/* line 555, sass/_modules.scss */
+.jspVerticalBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 100%;
+  background: red;
+}
+
+/* line 564, sass/_modules.scss */
+.jspHorizontalBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+
+/* line 574, sass/_modules.scss */
+.jspVerticalBar *,
+.jspHorizontalBar * {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 579, sass/_modules.scss */
+.jspCap {
+  display: none;
+}
+
+/* line 581, sass/_modules.scss */
+.jspHorizontalBar .jspCap {
+  float: left;
+}
+
+/* line 583, sass/_modules.scss */
+.jspTrack {
+  background: #dde;
+  position: relative;
+}
+
+/* line 588, sass/_modules.scss */
+.jspDrag {
+  background: #bbd;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+/* line 597, sass/_modules.scss */
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag {
+  float: left;
+  height: 100%;
+}
+
+/* line 602, sass/_modules.scss */
+.jspArrow {
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+}
+
+/* line 609, sass/_modules.scss */
+.jspArrow.jspDisabled {
+  cursor: default;
+  background: #80808d;
+}
+
+/* line 614, sass/_modules.scss */
+.jspVerticalBar .jspArrow {
+  height: 16px;
+}
+
+/* line 616, sass/_modules.scss */
+.jspHorizontalBar .jspArrow {
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+/* line 622, sass/_modules.scss */
+.jspVerticalBar .jspArrow:focus {
+  outline: none;
+}
+
+/* line 624, sass/_modules.scss */
+.jspCorner {
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+/* line 631, sass/_modules.scss */
+* html .jspCorner {
+  margin: 0 -3px 0 0;
 }
 
 /* line 3, sass/_anim.scss */

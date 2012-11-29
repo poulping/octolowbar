@@ -43,7 +43,7 @@
             <div class="modal-body">
                 <!-- Content is remotely added here -->
             </div>
-            <div class="modal-footer">&nbsp;</div>
+            <div class="modal-footer"></div>
         </div>
         <?php include_javascripts() ?>
 

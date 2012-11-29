@@ -144,6 +144,7 @@ EIGHT = {
 
         console.log('fullview ready');
         $('body').on('shown', '.modal', function () {
+
             $('form th').remove();
             $('#submitcomment').off('click').on('click', function(){
                 var name = $('#comment_username').val();
@@ -164,6 +165,7 @@ EIGHT = {
                 }
                 return false;
             });
+
         });
 
     }
