@@ -1,7 +1,7 @@
 <div class="m-fullview">
 
     <div class="content">
-        <h2>Post title</h2>
+        <h2><?php echo $content?></h2>
         <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content, 'is_index' => false)) ?>
         <?php if ($content->getContentAdditional()) : ?>
 
@@ -12,7 +12,7 @@
     <?php if ($content->getComments()) : ?>
     <ul class="m-comments">
     <?php foreach($content->getComments() as $comment) : ?>
-        <li><strong><?php echo $comment->getUsername() ?></strong> : <?php echo $comment->getContent() ?></li>
+        <li><strong><?php echo $comment->getUsername() ?></strong> : <?php echo $comment->content ?></li>
         <?php endforeach; ?>
     </ul>
     <?php endif; ?>
