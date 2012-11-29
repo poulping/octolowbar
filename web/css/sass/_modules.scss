@@ -551,7 +551,11 @@
     margin-top:20px;
     color:$white!important;
     @include border-radius(15px);
-    a{color:$white;}
+    a{
+        color:$white;
+        text-decoration: none;
+        &:hover{color:$beige;}
+    }
     ul{
         margin:0 0 12px 0 ;
         padding:0;
@@ -560,6 +564,9 @@
             list-style: none;
             float:left;
             margin-right:20px;
+            font-family: $fontstackheader;
+            font-size: 26px;
+            text-transform: capitalize;
         }
     }
     label{

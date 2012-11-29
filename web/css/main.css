@@ -1655,27 +1655,35 @@ body {
 /* line 554, sass/_modules.scss */
 #addform a {
   color: white;
+  text-decoration: none;
 }
-/* line 555, sass/_modules.scss */
+/* line 557, sass/_modules.scss */
+#addform a:hover {
+  color: #e7dfc8;
+}
+/* line 559, sass/_modules.scss */
 #addform ul {
   margin: 0 0 12px 0;
   padding: 0;
 }
-/* line 559, sass/_modules.scss */
+/* line 563, sass/_modules.scss */
 #addform ul li {
   list-style: none;
   float: left;
   margin-right: 20px;
+  font-family: "LobsterTwo-BoldItalic", serif;
+  font-size: 26px;
+  text-transform: capitalize;
 }
-/* line 565, sass/_modules.scss */
+/* line 572, sass/_modules.scss */
 #addform label {
   margin-right: 12px;
 }
-/* line 568, sass/_modules.scss */
+/* line 575, sass/_modules.scss */
 #addform th {
   text-align: right;
 }
-/* line 571, sass/_modules.scss */
+/* line 578, sass/_modules.scss */
 #addform input[type="text"], #addform textarea {
   margin-left: 1px;
   border: 1px solid #9F9FA1;
@@ -1686,16 +1694,16 @@ body {
   font-size: 13px;
   line-height: 32px;
 }
-/* line 581, sass/_modules.scss */
+/* line 588, sass/_modules.scss */
 #addform textarea {
   height: 400px;
 }
-/* line 582, sass/_modules.scss */
+/* line 589, sass/_modules.scss */
 #addform input[type="file"], #addform select {
   margin-bottom: 12px;
   color: white;
 }
-/* line 586, sass/_modules.scss */
+/* line 593, sass/_modules.scss */
 #addform select {
   color: #27283c !important;
 }
