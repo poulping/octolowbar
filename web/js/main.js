@@ -93,6 +93,7 @@ EIGHT = {
 
         setInterval(function(){
             $.get('/timeline/poll', function(response){
+                console.log(response)
                 if(response != "0"){
 
                     //.addClass('fadeInLeftBig');
@@ -108,7 +109,7 @@ EIGHT = {
                     });
 
                     var anchor = '<a href="#" class="m-anchor" data-target="'+responseTime+'">View '+responseTitle+'</a>';
-                    $('.m-notifications').append(anchor).fadeIn(200);
+                    $('.m-notifications').fadeIn(200).append(anchor);
                     $('.m-anchor').off('click').on('click', function(){
                         var target = $(this).data('target');
                         $('html, body').animate({
@@ -128,7 +129,7 @@ EIGHT = {
     },
     fullview : function(){
 
-        $('[data-remote]').on('click', function(){
+        $('[data-remote]').live('click', function(){
             var url = $(this).data('remote');
             console.log(url);
             $('#modal-item-view').modal({
