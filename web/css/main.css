@@ -715,10 +715,11 @@ textarea {
  *    `:before` to contain the top-margins of child elements.
  */
 /* line 196, sass/_h5bp.scss */
-.clearfix:before, #container > .l-wrapped:before, .m-header .l-wrapped:before,
+.clearfix:before, #container > .l-wrapped:before, .m-header .l-wrapped:before, #addform ul:before,
 .clearfix:after,
 #container > .l-wrapped:after,
-.m-header .l-wrapped:after {
+.m-header .l-wrapped:after,
+#addform ul:after {
   content: " ";
   /* 1 */
   display: table;
@@ -726,7 +727,7 @@ textarea {
 }
 
 /* line 201, sass/_h5bp.scss */
-.clearfix:after, #container > .l-wrapped:after, .m-header .l-wrapped:after {
+.clearfix:after, #container > .l-wrapped:after, .m-header .l-wrapped:after, #addform ul:after {
   clear: both;
 }
 
@@ -735,7 +736,7 @@ textarea {
  * Include this rule to trigger hasLayout and contain floats.
  */
 /* line 210, sass/_h5bp.scss */
-.clearfix, #container > .l-wrapped, .m-header .l-wrapped {
+.clearfix, #container > .l-wrapped, .m-header .l-wrapped, #addform ul {
   *zoom: 1;
 }
 
@@ -1631,124 +1632,64 @@ body {
   filter: alpha(opacity=70);
 }
 
-/*
- * CSS Styles that are needed by jScrollPane for it to operate correctly.
- *
- * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
- * may not operate correctly without them.
- */
-/* line 550, sass/_modules.scss */
-.jspContainer {
-  overflow: hidden;
-  position: relative;
+/* line 542, sass/_modules.scss */
+#addform {
+  background: rgba(48, 49, 68, 0.9);
+  padding: 20px;
+  margin-top: 20px;
+  color: white !important;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border-radius: 15px;
 }
-
-/* line 555, sass/_modules.scss */
-.jspPane {
-  position: absolute;
+/* line 548, sass/_modules.scss */
+#addform a {
+  color: white;
 }
-
-/* line 557, sass/_modules.scss */
-.jspVerticalBar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 16px;
-  height: 100%;
-  background: red;
-}
-
-/* line 566, sass/_modules.scss */
-.jspHorizontalBar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 16px;
-  background: red;
-}
-
-/* line 576, sass/_modules.scss */
-.jspVerticalBar *,
-.jspHorizontalBar * {
-  margin: 0;
+/* line 549, sass/_modules.scss */
+#addform ul {
+  margin: 0 0 12px 0;
   padding: 0;
 }
-
-/* line 581, sass/_modules.scss */
-.jspCap {
-  display: none;
-}
-
-/* line 583, sass/_modules.scss */
-.jspHorizontalBar .jspCap {
+/* line 553, sass/_modules.scss */
+#addform ul li {
+  list-style: none;
   float: left;
+  margin-right: 20px;
 }
-
-/* line 585, sass/_modules.scss */
-.jspTrack {
-  background: #dde;
-  position: relative;
+/* line 559, sass/_modules.scss */
+#addform label {
+  margin-right: 12px;
 }
-
-/* line 590, sass/_modules.scss */
-.jspDrag {
-  background: #bbd;
-  position: relative;
-  top: 0;
-  left: 0;
-  cursor: pointer;
+/* line 562, sass/_modules.scss */
+#addform th {
+  text-align: right;
 }
-
-/* line 599, sass/_modules.scss */
-.jspHorizontalBar .jspTrack,
-.jspHorizontalBar .jspDrag {
-  float: left;
-  height: 100%;
+/* line 565, sass/_modules.scss */
+#addform input[type="text"], #addform textarea {
+  margin-left: 1px;
+  border: 1px solid #9F9FA1;
+  height: 32px;
+  padding-left: 14px;
+  margin-bottom: 12px;
+  width: 386px;
+  font-size: 13px;
+  line-height: 32px;
 }
-
-/* line 604, sass/_modules.scss */
-.jspArrow {
-  background: #50506d;
-  text-indent: -20000px;
-  display: block;
-  cursor: pointer;
+/* line 575, sass/_modules.scss */
+#addform textarea {
+  height: 400px;
 }
-
-/* line 611, sass/_modules.scss */
-.jspArrow.jspDisabled {
-  cursor: default;
-  background: #80808d;
+/* line 576, sass/_modules.scss */
+#addform input[type="file"], #addform select {
+  margin-bottom: 12px;
+  color: white;
 }
-
-/* line 616, sass/_modules.scss */
-.jspVerticalBar .jspArrow {
-  height: 16px;
-}
-
-/* line 618, sass/_modules.scss */
-.jspHorizontalBar .jspArrow {
-  width: 16px;
-  float: left;
-  height: 100%;
-}
-
-/* line 624, sass/_modules.scss */
-.jspVerticalBar .jspArrow:focus {
-  outline: none;
-}
-
-/* line 626, sass/_modules.scss */
-.jspCorner {
-  background: #eeeef4;
-  float: left;
-  height: 100%;
-}
-
-/* Yuk! CSS Hack for IE6 3 pixel bug :( */
-/* line 633, sass/_modules.scss */
-* html .jspCorner {
-  margin: 0 -3px 0 0;
+/* line 580, sass/_modules.scss */
+#addform select {
+  color: #27283c !important;
 }
 
 /* line 3, sass/_anim.scss */

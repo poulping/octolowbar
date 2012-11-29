@@ -128,8 +128,9 @@ EIGHT = {
 
     },
     fullview : function(){
-
+        var target;
         $('[data-remote]').live('click', function(){
+            target = $(this);
             var url = $(this).data('remote');
             console.log(url);
             $('#modal-item-view').modal({
@@ -157,11 +158,14 @@ EIGHT = {
                     $('#comment_content').trigger('focus');
                 }else{
                     $('.m-comments').append(newcomment);
-                    $('#comment_username').val("");
-                    $('#comment_content').val("");
                     var formdata = $('#modal-item-view form').serialize(),
                         formurl = $('#modal-item-view form').attr('action');
                         $.post(formurl, formdata);
+                        console.log(formdata);
+                        console.log("formdata");
+                    $('#comment_username').val("");
+                    $('#comment_content').val("");
+
                 }
                 return false;
             });
