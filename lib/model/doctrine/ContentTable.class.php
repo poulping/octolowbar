@@ -16,7 +16,7 @@ class ContentTable extends Doctrine_Table
 
     const CONTENT_IMAGE = 'image';
 
-    public static $types = array(self::CONTENT_AUDIO, self::CONTENT_TEXT, self::CONTENT_VIDEO, self::CONTENT_IMAGE);
+    public static $types = array(/*self::CONTENT_AUDIO,*/ self::CONTENT_TEXT, self::CONTENT_VIDEO, self::CONTENT_IMAGE);
 
     /**
      * Returns an instance of this class.
