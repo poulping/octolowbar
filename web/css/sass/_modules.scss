@@ -104,6 +104,8 @@
 
     cursor:pointer;
 
+    &.s-hover{
+    }
     header{
         padding:4px 8px 0 8px;
         .text{
@@ -279,7 +281,7 @@
     .content{
         background:$beige;
         @include border-top-radius(15px);
-        margin:0 0 12px 0;
+        margin:0;
         padding:20px;
     }
     form{
@@ -472,7 +474,7 @@
     z-index: 1050;
     width: 600px;
     padding:0;
-    margin: -250px 0 0 -300px;
+    margin: -300px 0 0 -300px;
     border:5px solid $white;
     background:$white;
     @include border-radius(30px);
@@ -494,18 +496,18 @@
         background:#868687;
         color:#868687;
         border:none;
-        height:29px;
-        width:30px;
+        height:34px;
+        width:35px;
         @include border-radius(4em);
         @include box-shadow(rgba(0, 0, 0, 0.6) 3px 3px 6px 1px);
         &:after{
             content:"";
             display:block;
             position:absolute;
-            top: 7px;
-            left: 8px;
-            height:15px;
-            width:15px;
+            top: 9px;
+            left: 11px;
+            height:34px;
+            width:35px;
             @extend %iconsprite;
             background-position: -50px 0;
 

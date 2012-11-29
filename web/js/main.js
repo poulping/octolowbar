@@ -70,6 +70,16 @@ EIGHT = {
             });
         });
 
+        $(".m-item").hover(
+          function () {
+            var me = $(this);
+            $('#timeline').find('.m-item').not(me).addClass("s-hover");
+          },
+          function () {
+            var me = $(this);
+            $('#timeline').find('.m-item').not(me).removeClass("s-hover");
+          }
+        );
         console.log('timeline initialized');
 
         // Init fullview
@@ -147,9 +157,9 @@ EIGHT = {
                     $('.m-comments').append(newcomment);
                     $('#comment_username').val("");
                     $('#comment_content').val("");
-                    var formdata = $('form').serialize(),
-                        url = $('form').attr('action');
-                        $.get(url, formdata);
+                    var formdata = $('#modal-item-view form').serialize(),
+                        formurl = $('#modal-item-view form').attr('action');
+                        $.post(formurl, formdata);
                 }
                 return false;
             });
