@@ -18,7 +18,7 @@ class ContentForm extends BaseContentForm
       $array_years = array();
       for ($i = $year; $i < 2013; $i++)
       {
-          $array_years[] = $i;
+          $array_years[$i] = $i;
       }
       // content must be a type of content
       if (!is_subclass_of($this->getObject(), 'Content'))
