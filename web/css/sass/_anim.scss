@@ -29,6 +29,11 @@
     @include transition-timing-function(linear);
     @include transition-property(opacity);
 }
+#submitcomment{
+    @include transition-duration(0.3s);
+    @include transition-timing-function(linear);
+    @include transition-property(box-shadow);
+}
 
 /*
 Animate.css - http://daneden.me/animate

@@ -10,10 +10,11 @@ body{
 
 
 #container{
-    @extend .clearfix;
     position:relative;
     min-width: $containermin;
+    min-height: 100%;
     >.l-wrapped{
+        @extend .clearfix;
         position:relative;
         z-index:1001;
     }
@@ -32,7 +33,7 @@ body{
     }
     .m-notifications{
         position:fixed;
-        bottom:20px;
+        top:275px;
         left:20px;
         z-index:1001;
     }

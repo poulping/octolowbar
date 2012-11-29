@@ -15,16 +15,16 @@
         <header class="m-header">
             <div class="l-wrapped">
                 <div class="intro">
-                    <h1 class="m-logo_ode"><a href="/">Ode to Barlow</a></h1>
+                    <h1 class="m-logo_ode"><a href="/"><span>Ode to</span> Barlow</a></h1>
                     <h2>8 Years at Twist Image</h2>
-                    Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna.
+                    Let’s all celebrate the wonder and glory that is Michael Barlow. He’s been here 8 years. That’s like 3,000 years in server time.
                 </div>
                 <div class="m-bonhomme"></div>
                 <div class="m-comment_box_wrapper">
                     <div class="comment_box">
-                        <p>“Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non.”</p>
-                        <p>“Maecenas sed diam eget risus varius blandit sit amet non.”</p>
-                        <p>“Sed posuere consectetur est at lobortis.”</p>
+                        <p class="quote-1">“I guess I should let my daughter know that I’m leaving the building...”</p>
+                        <p class="quote-2">“Can we grow our prostates for moustache cancer?”</p>
+                        <p class="quote-3">“The slowest thing about your computer is 13 inches in front of it but we’ll see if we can upgrade the other thing you mentioned.”</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
         <!-- Modal -->
         <div id="modal-item-view" class="modal hide fade">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <button type="button" class="close b-close" data-dismiss="modal" aria-hidden="true">×</button>
             </div>
             <div class="modal-body">
                 <!-- Content is remotely added here -->

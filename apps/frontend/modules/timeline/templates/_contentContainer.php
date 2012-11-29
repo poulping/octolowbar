@@ -5,5 +5,5 @@
         <h1 class="title"><?php echo $content->getTitle(); ?></h1>
     </header>
     <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content, 'is_index' => true)) ?>
-    <div class="commentsnb"><?php echo $content->getComments()->count()?> comments</div>
+    <div class="commentsnb"><?php echo $content->getComments()->count()?></div>
 </article>
