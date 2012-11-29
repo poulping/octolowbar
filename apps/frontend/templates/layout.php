@@ -25,6 +25,8 @@
                         <p class="quote-1">“I guess I should let my daughter know that I’m leaving the building...”</p>
                         <p class="quote-2">“Can we grow our prostates for moustache cancer?”</p>
                         <p class="quote-3">“The slowest thing about your computer is 13 inches in front of it but we’ll see if we can upgrade the other thing you mentioned.”</p>
+                        <p class="quote-4">“Yeah, I basically cage my kids til they are 12. Then from 12 to 15 they're out of their cage. Then from 15 to 21 they're back in their cage.”</p>
+                        <p class="quote-5">“I won’t give out the password because it’s job security”</p>
                     </div>
                 </div>
             </div>

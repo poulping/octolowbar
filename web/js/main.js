@@ -86,7 +86,9 @@ EIGHT = {
         this.fullview();
 
         // Start long polling
-        this.longPollInit();
+        if($timeline.length >0){
+            this.longPollInit();
+        }
 
     },
     longPollInit : function(){
