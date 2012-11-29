@@ -101,7 +101,9 @@
     background:$white;
     @include border-radius(15px);
     @include box-shadow(rgba(0, 0, 0, 0.3) 3px 3px 6px -1px);
-
+    &:hover{
+        @include box-shadow(rgba(0, 0, 0, 0.6) 3px 3px 6px -1px);
+    }
     cursor:pointer;
 
     &.s-hover{
