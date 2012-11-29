@@ -23,7 +23,7 @@ EIGHT = {
             return false;
         });
 
-        $('#container').append('<div class="m-notifications">');
+        $('#container').append('<div class="m-notifications"><h2>Recent Stories</h2></div>');
 
        $('.m-comment_box_wrapper .comment_box').cycle();
     },
@@ -86,7 +86,9 @@ EIGHT = {
                 if(response != "0"){
 
                     //.addClass('fadeInLeftBig');
-                    var responseTime = $(response).data('time');
+                    var responseTime = $(response).data('time'),
+                        responseTitle = $(response).find('.title').text();
+
 
                     $('.m-item').each(function(){
                         if($(this).data('time') <= responseTime){
@@ -95,14 +97,17 @@ EIGHT = {
                         }
                     });
 
-                    var anchor = '<a href="#" class="m-anchor" data-target="'+responseTime+'">New story!</a>';
-                    $('.m-notifications').append(anchor);
+                    var anchor = '<a href="#" class="m-anchor" data-target="'+responseTime+'">View '+responseTitle+'</a>';
+                    $('.m-notifications').append(anchor).fadeIn(200);
                     $('.m-anchor').off('click').on('click', function(){
                         var target = $(this).data('target');
                         $('html, body').animate({
                              scrollTop: $('.m-item[data-time="'+target+'"]').offset().top
                          }, 500);
                         $(this).remove();
+                        if($('.m-anchor').length == 0){
+                            $('.m-notifications').fadeOut(200);
+                        }
                         return false;
                     });
 
@@ -125,15 +130,30 @@ EIGHT = {
         $('body').on('hidden', '.modal', function () {
             $(this).removeData('modal');
         });
+
         console.log('fullview ready');
-        $('body').on('show', '.modal', function () {
-            $('.m-fullview input[type="submit"]').off('click').on('click', function(){
+        $('body').on('shown', '.modal', function () {
+            $('form th').remove();
+            $('#submitcomment').off('click').on('click', function(){
                 var name = $('#comment_username').val();
                 var content = $('#comment_content').val();
                 var newcomment = '<li><strong>'+name+'</strong> : '+content+'</li>';
-                $('.m-comments').append(newcomment)
+
+                if(name == ""){
+                    $('#comment_username').trigger('focus');
+                }else if(content == "" || content ==":"){
+                    $('#comment_content').trigger('focus');
+                }else{
+                    $('.m-comments').append(newcomment);
+                    $('#comment_username').val("");
+                    $('#comment_content').val("");
+                    var formdata = $('form').serialize(),
+                        url = $('form').attr('action');
+                        $.get(url, formdata);
+                }
                 return false;
             });
         });
+
     }
 }

@@ -1,12 +1,13 @@
-
 <div class="m-fullview">
-    <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content, 'is_index' => false)) ?>
-    <?php if ($content->getContentAdditional()) : ?>
 
     <div class="content">
-    <?php echo $content->getContentAdditional() ?>
+        <h2>Post title</h2>
+        <?php include_partial('content'.sfInflector::camelize($content->getType()), array('content' => $content, 'is_index' => false)) ?>
+        <?php if ($content->getContentAdditional()) : ?>
+
+            <?php echo $content->getContentAdditional() ?>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
 
     <?php if ($content->getComments()) : ?>
     <ul class="m-comments">
@@ -18,9 +19,10 @@
 
     <?php echo form_tag('@process_comment?for_content_id='.$content->getId()) ?>
         <table>
+            <h3>Say something:</h3>
             <?php echo $comment_form?>
             <tr>
-                <td colspan="2"><input type="submit" value="send" /></td>
+                <td colspan="2"><input type="submit" id="submitcomment" value="Add it" /></td>
             </tr>
         </table>
     </form>
